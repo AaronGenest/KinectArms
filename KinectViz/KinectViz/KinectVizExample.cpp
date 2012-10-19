@@ -2,6 +2,7 @@
 #include <iostream>
 #include "View.h"
 #include "Effects.h"
+#include "KinectViz/VizPipeline.h"
 
 // KinectTable
 #include "Global/KinectTable_c.h"
@@ -28,6 +29,8 @@ static unsigned short s_depth[MAX_DEPTH];
 
 KinectTable::Client* client = NULL;
 extern bool showDebug;
+
+VizPipeline viz;
 
 
 //---------------------------------------------------------------------------
@@ -278,6 +281,10 @@ void Display(void)
 	static ColorImage colorImage;
 	applyVizEffects(data, colorImage);
 	//data.colorImage.CopyTo(colorImage);
+
+	// Apply effects (new version)
+	viz.getEffect(kPointerCircle).enabled = true;
+	viz.applyEffects(colorImage);
 
 	// Get test image
 	static ColorImage testImage;

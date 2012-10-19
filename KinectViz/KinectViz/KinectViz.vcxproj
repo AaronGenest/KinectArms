@@ -104,12 +104,18 @@
   <ItemGroup>
     <ClInclude Include="Effects.h" />
     <ClInclude Include="GLImage.h" />
+    <ClInclude Include="KinectViz\Effect.h" />
+    <ClInclude Include="KinectViz\Effects\PointerCircle.h" />
+    <ClInclude Include="KinectViz\VizPipeline.h" />
     <ClInclude Include="View.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Effects.cpp" />
     <ClCompile Include="GLImage.cpp" />
     <ClCompile Include="KinectVizExample.cpp" />
+    <ClCompile Include="KinectViz\Effect.cpp" />
+    <ClCompile Include="KinectViz\Effects\PointerCircle.cpp" />
+    <ClCompile Include="KinectViz\VizPipeline.cpp" />
     <ClCompile Include="View.cpp" />
   </ItemGroup>
   <ItemGroup>
