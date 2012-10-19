@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug_Microsoft|Win32">
+      <Configuration>Debug_Microsoft</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Microsoft|Win32">
+      <Configuration>Release_Microsoft</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}</ProjectGuid>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>KinectTable</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CLRSupport>false</CLRSupport>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Microsoft|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CLRSupport>false</CLRSupport>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>false</CLRSupport>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Microsoft|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>false</CLRSupport>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Microsoft|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_Microsoft|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;$(ProjectDir)</IncludePath>
+    <LibraryPath>$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib</LibraryPath>
+    <SourcePath>$(VCInstallDir)atlmfc\src\mfc;$(VCInstallDir)atlmfc\src\mfcm;$(VCInstallDir)atlmfc\src\atl;$(VCInstallDir)crt\src;</SourcePath>
+    <IgnoreImportLibrary>false</IgnoreImportLibrary>
+    <OutDir>$(SolutionDir)Debug\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Microsoft|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;$(ProjectDir)</IncludePath>
+    <LibraryPath>$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib</LibraryPath>
+    <SourcePath>$(VCInstallDir)atlmfc\src\mfc;$(VCInstallDir)atlmfc\src\mfcm;$(VCInstallDir)atlmfc\src\atl;$(VCInstallDir)crt\src;</SourcePath>
+    <IgnoreImportLibrary>false</IgnoreImportLibrary>
+    <OutDir>$(SolutionDir)Debug\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;$(ProjectDir)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Microsoft|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;$(ProjectDir)</IncludePath>
+    <OutDir>$(SolutionDir)Release\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;KINECT_OPEN_NI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(ProjectDir)Libs\OpenCV\build\include;$(ProgramFiles)\OpenNI\Include;$(ProjectDir)Libs\zlib125-dll\include;$(ProjectDir)Libs\OpenCV\include</AdditionalIncludeDirectories>
+      <CompileAsManaged>false</CompileAsManaged>
+      <ObjectFileName>$(IntDir)/%(RelativeDir)</ObjectFileName>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Ws2_32.lib;openNI.lib;opencv_core231.lib;opencv_imgproc231.lib;opencv_highgui231.lib;opencv_ml231.lib;opencv_video231.lib;opencv_features2d231.lib;opencv_calib3d231.lib;opencv_objdetect231.lib;opencv_contrib231.lib;opencv_legacy231.lib;opencv_flann231.lib;zdll.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)Libs\OpenCV\build\x86\vc10\lib;$(ProgramFiles)\OpenNI\Lib;$(ProjectDir)Libs\zlib125-dll\lib</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>KinectTable.def</ModuleDefinitionFile>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "$(ProjectDir)Libs\OpenCV\build\x86\vc10\bin\*.dll" "$(OutDir)" /Y  &amp;&amp;  xcopy /s "$(ProjectDir)Data" "$(OutDir)Data" /i /Y  &amp;&amp;  copy "$(ProjectDir)Libs\zlib125-dll\zlib1.dll" "$(OutDir)" /Y  &amp;&amp;  copy "$(ProjectDir)Libs\OpenCV\build\common\tbb\ia32\vc10\tbb.dll" "$(OutDir)" /Y</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Microsoft|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;KINECT_MICROSOFT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Libs\OpenCV\build\include;$(ProgramFiles)\OpenNI\Include;$(ProjectDir)..\Libs\zlib125-dll\include;$(ProjectDir)..\Libs\OpenCV\include;$(KINECTSDK10_DIR)\inc</AdditionalIncludeDirectories>
+      <CompileAsManaged>false</CompileAsManaged>
+      <ObjectFileName>$(IntDir)/%(RelativeDir)</ObjectFileName>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Ws2_32.lib;Kinect10.lib;opencv_core231.lib;opencv_imgproc231.lib;opencv_highgui231.lib;opencv_ml231.lib;opencv_video231.lib;opencv_features2d231.lib;opencv_calib3d231.lib;opencv_objdetect231.lib;opencv_contrib231.lib;opencv_legacy231.lib;opencv_flann231.lib;zdll.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(KINECTSDK10_DIR)\lib\x86;$(ProjectDir)..\Libs\OpenCV\build\x86\vc10\lib;$(ProjectDir)..\Libs\zlib125-dll\lib;$(ProjectDir)..\Libs\Win32\OpenCV2.3.1\build\x86\vc10\lib</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>KinectTable.def</ModuleDefinitionFile>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "$(ProjectDir)Libs\OpenCV\build\x86\vc10\bin\*.dll" "$(OutDir)" /Y  &amp;&amp;  xcopy /s "$(ProjectDir)Data" "$(OutDir)Data" /i /Y  &amp;&amp;  copy "$(ProjectDir)Libs\zlib125-dll\zlib1.dll" "$(OutDir)" /Y  &amp;&amp;  copy "$(ProjectDir)Libs\OpenCV\build\common\tbb\ia32\vc10\tbb.dll" "$(OutDir)" /Y</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;KINECT_OPEN_NI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(ProjectDir)Libs\OpenCV\build\include;$(ProgramFiles)\OpenNI\Include;$(ProjectDir)Libs\zlib125-dll\include;$(ProjectDir)Libs\OpenCV\include</AdditionalIncludeDirectories>
+      <CompileAsManaged>false</CompileAsManaged>
+      <Optimization>Full</Optimization>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <EnableEnhancedInstructionSet>
+      </EnableEnhancedInstructionSet>
+      <ObjectFileName>$(IntDir)/%(RelativeDir)</ObjectFileName>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Ws2_32.lib;openNI.lib;opencv_core231.lib;opencv_imgproc231.lib;opencv_highgui231.lib;opencv_ml231.lib;opencv_video231.lib;opencv_features2d231.lib;opencv_calib3d231.lib;opencv_objdetect231.lib;opencv_contrib231.lib;opencv_legacy231.lib;opencv_flann231.lib;zdll.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)Libs\OpenCV\build\x86\vc10\lib;$(ProgramFiles)\OpenNI\Lib;$(ProjectDir)Libs\zlib125-dll\lib</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "$(ProjectDir)Libs\OpenCV\build\x86\vc10\bin\*.dll" "$(OutDir)" /Y  &amp;&amp;  xcopy /s "$(ProjectDir)Data" "$(OutDir)Data" /i /Y  &amp;&amp;  copy "$(ProjectDir)Libs\zlib125-dll\zlib1.dll" "$(OutDir)" /Y  &amp;&amp;  copy "$(ProjectDir)Libs\OpenCV\build\common\tbb\ia32\vc10\tbb.dll" "$(OutDir)" /Y</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Microsoft|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;KINECT_MICROSOFT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Libs\OpenCV\build\include;$(ProjectDir)..\Libs\zlib125-dll\include;$(ProjectDir)..\Libs\OpenCV\include;$(KINECTSDK10_DIR)\inc</AdditionalIncludeDirectories>
+      <CompileAsManaged>false</CompileAsManaged>
+      <ObjectFileName>$(IntDir)/%(RelativeDir)</ObjectFileName>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Ws2_32.lib;Kinect10.lib;opencv_core231.lib;opencv_imgproc231.lib;opencv_highgui231.lib;opencv_ml231.lib;opencv_video231.lib;opencv_features2d231.lib;opencv_calib3d231.lib;opencv_objdetect231.lib;opencv_contrib231.lib;opencv_legacy231.lib;opencv_flann231.lib;zdll.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(KINECTSDK10_DIR)\lib\x86;$(ProjectDir)..\Libs\OpenCV\build\x86\vc10\lib;$(ProjectDir)..\Libs\zlib125-dll\lib;$(ProjectDir)..\Libs\Win32\OpenCV2.3.1\build\x86\vc10\lib</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>KinectTable.def</ModuleDefinitionFile>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "$(ProjectDir)Libs\OpenCV\build\x86\vc10\bin\*.dll" "$(OutDir)" /Y  &amp;&amp;  xcopy /s "$(ProjectDir)Data" "$(OutDir)Data" /i /Y  &amp;&amp;  copy "$(ProjectDir)Libs\zlib125-dll\zlib1.dll" "$(OutDir)" /Y  &amp;&amp;  copy "$(ProjectDir)Libs\OpenCV\build\common\tbb\ia32\vc10\tbb.dll" "$(OutDir)" /Y</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Codecs\Codecs.h" />
+    <ClInclude Include="Codecs\RunLengthEncoder.h" />
+    <ClInclude Include="Codecs\RunLengthEncoder.hpp" />
+    <ClInclude Include="Codecs\ZlibEncoder.h" />
+    <ClInclude Include="Codecs\ZlibEncoder.hpp" />
+    <ClInclude Include="DataTypes\carray.hpp" />
+    <ClInclude Include="DataTypes\carray2d.hpp" />
+    <ClInclude Include="Randomization\IRandomizable.h" />
+    <ClInclude Include="Randomization\Randomization.h" />
+    <ClInclude Include="Randomization\Randomizer.h" />
+    <ClInclude Include="Sensors\TestImageHolder.h" />
+    <ClInclude Include="Serialization\Deserializer.hpp" />
+    <ClInclude Include="Serialization\Serializer.hpp" />
+    <ClInclude Include="Serializers\carray2dSerializer.h" />
+    <ClInclude Include="Serializers\carraySerializer.h" />
+    <ClInclude Include="ImageProcessing\ImageProcessing.h" />
+    <ClInclude Include="KinectTable\DataForwarder.h" />
+    <ClInclude Include="DataTypes\carray.h" />
+    <ClInclude Include="DataTypes\carray2d.h" />
+    <ClInclude Include="DataTypes\Constants.h" />
+    <ClInclude Include="DataTypes\HandPimpl.h" />
+    <ClInclude Include="DataTypes\Images.h" />
+    <ClInclude Include="DataTypes\KinectData.h" />
+    <ClInclude Include="DataTypes\KinectDataParams.h" />
+    <ClInclude Include="DataTypes\Other.h" />
+    <ClInclude Include="DataTypes\Pixels.h" />
+    <ClInclude Include="DataTypes\Points.h" />
+    <ClInclude Include="DataTypes\DataTypes.h" />
+    <ClInclude Include="Global\KinectTable_c.h" />
+    <ClInclude Include="Global\Testing_c.h" />
+    <ClInclude Include="DataTypes\Hand.h" />
+    <ClInclude Include="ImageProcessing\HandLabeler.h" />
+    <ClInclude Include="ImageProcessing\HandDetection.h" />
+    <ClInclude Include="ImageProcessing\Helpers.hpp" />
+    <ClInclude Include="ImageProcessing\TableDetection.h" />
+    <ClInclude Include="KinectTable\Client.h" />
+    <ClInclude Include="KinectTable\LocalClient.h" />
+    <ClInclude Include="KinectTable\RemoteClient.h" />
+    <ClInclude Include="Network\FrameType.h" />
+    <ClInclude Include="Network\ImageSerializer.h" />
+    <ClInclude Include="Network\Info.h" />
+    <ClInclude Include="Network\KinectDataSerializer.h" />
+    <ClInclude Include="Sensors\DataProcessor.h" />
+    <ClInclude Include="Sensors\KinectSensor.h" />
+    <ClInclude Include="Sensors\KinectSensor_Microsoft.h" />
+    <ClInclude Include="Sensors\KinectSensor_OpenNi.h" />
+    <ClInclude Include="Sensors\Sensors.h" />
+    <ClInclude Include="DataTypes\Table.h" />
+    <ClInclude Include="Serialization\Deserializer.h" />
+    <ClInclude Include="Serialization\ISerializable.h" />
+    <ClInclude Include="Serialization\IWriter.h" />
+    <ClInclude Include="Serialization\Serialization.h" />
+    <ClInclude Include="Serialization\Serializer.h" />
+    <ClInclude Include="Serializers\Serializers.h" />
+    <ClInclude Include="Testing\HandDetectionTest.h" />
+    <ClInclude Include="ImageProcessing\Helpers.h" />
+    <ClInclude Include="KinectTable\KinectTable.h" />
+    <ClInclude Include="Network\Client.h" />
+    <ClInclude Include="Network\ClientListener.h" />
+    <ClInclude Include="Network\Framer.h" />
+    <ClInclude Include="Network\Network.h" />
+    <ClInclude Include="Network\RemoteClient.h" />
+    <ClInclude Include="Network\Server.h" />
+    <ClInclude Include="Sockets\Packet.h" />
+    <ClInclude Include="Sockets\Packetizer.h" />
+    <ClInclude Include="Sockets\Serializer.h" />
+    <ClInclude Include="Sockets\Sockets.h" />
+    <ClInclude Include="Sockets\TcpListener.h" />
+    <ClInclude Include="Sockets\TcpSocket.h" />
+    <ClInclude Include="Testing\TableDetectionTest.h" />
+    <ClInclude Include="Template\Template.h" />
+    <ClInclude Include="Template\TemplateClass.h" />
+    <ClInclude Include="Testing\ClientSpeedTest.h" />
+    <ClInclude Include="Testing\ClientTest.h" />
+    <ClInclude Include="Testing\FramerTest.h" />
+    <ClInclude Include="Testing\SocketSpeedTest.h" />
+    <ClInclude Include="Testing\SocketTest.h" />
+    <ClInclude Include="Testing\Testing.h" />
+    <ClInclude Include="Testing\Tests.h" />
+    <ClInclude Include="Threading\Mutex.h" />
+    <ClInclude Include="Threading\Thread.h" />
+    <ClInclude Include="Threading\Threading.h" />
+    <ClInclude Include="Util\DataExporter.h" />
+    <ClInclude Include="Util\DemoImageCreator.h" />
+    <ClInclude Include="Util\Drawing.h" />
+    <ClInclude Include="Util\Snapshot.h" />
+    <ClInclude Include="Util\Util.h" />
+    <ClInclude Include="Util\Helpers.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="DataTypes\Hand.cpp" />
+    <ClCompile Include="DataTypes\KinectData.cpp" />
+    <ClCompile Include="DataTypes\KinectDataParams.cpp" />
+    <ClCompile Include="DataTypes\Pixels.cpp" />
+    <ClCompile Include="DataTypes\Table.cpp" />
+    <ClCompile Include="Global\KinectTable_c.cpp" />
+    <ClCompile Include="Global\Testing_c.cpp" />
+    <ClCompile Include="ImageProcessing\HandLabeler.cpp" />
+    <ClCompile Include="ImageProcessing\HandDetection.cpp" />
+    <ClCompile Include="ImageProcessing\TableDetection.cpp" />
+    <ClCompile Include="KinectTable\DataForwarder.cpp" />
+    <ClCompile Include="KinectTable\LocalClient.cpp" />
+    <ClCompile Include="KinectTable\RemoteClient.cpp" />
+    <ClCompile Include="Sensors\DataProcessor.cpp" />
+    <ClCompile Include="Sensors\KinectSensor_Microsoft.cpp" />
+    <ClCompile Include="Sensors\KinectSensor_OpenNi.cpp" />
+    <ClCompile Include="Sensors\TestImageHolder.cpp" />
+    <ClCompile Include="Serialization\Deserializer.cpp" />
+    <ClCompile Include="Serialization\Serializer.cpp" />
+    <ClCompile Include="Testing\HandDetectionTest.cpp" />
+    <ClCompile Include="ImageProcessing\Helpers.cpp" />
+    <ClCompile Include="KinectTable\KinectTable.cpp" />
+    <ClCompile Include="Network\Client.cpp" />
+    <ClCompile Include="Network\ClientListener.cpp" />
+    <ClCompile Include="Network\Framer.cpp" />
+    <ClCompile Include="Network\RemoteClient.cpp" />
+    <ClCompile Include="Network\Server.cpp" />
+    <ClCompile Include="Sockets\Packetizer.cpp" />
+    <ClCompile Include="Sockets\Serializer.cpp" />
+    <ClCompile Include="Sockets\TcpListener.cpp" />
+    <ClCompile Include="Sockets\TcpSocket.cpp" />
+    <ClCompile Include="Testing\TableDetectionTest.cpp" />
+    <ClCompile Include="Template\TemplateClass.cpp" />
+    <ClCompile Include="Template\TemplateStatic.cpp" />
+    <ClCompile Include="Testing\ClientSpeedTest.cpp" />
+    <ClCompile Include="Testing\ClientTest.cpp" />
+    <ClCompile Include="Testing\FramerTest.cpp" />
+    <ClCompile Include="Testing\SocketSpeedTest.cpp" />
+    <ClCompile Include="Testing\SocketTest.cpp" />
+    <ClCompile Include="Testing\Tests.cpp" />
+    <ClCompile Include="Threading\Mutex.cpp" />
+    <ClCompile Include="Threading\Thread.cpp" />
+    <ClCompile Include="Util\DataExporter.cpp" />
+    <ClCompile Include="Util\Drawing.cpp" />
+    <ClCompile Include="Util\Helpers.cpp" />
+    <ClCompile Include="Util\Snapshot.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="KinectTable.def" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
