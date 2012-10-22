@@ -17,14 +17,24 @@ public:
 	VizPipeline();
 	~VizPipeline();
 
-	void applyEffects(ColorImage& image);
+	void updateData(KinectData& data);
+	void applyEffects();
 	Effect& getEffect(int handle);
 
 	template <class T> int registerEffect();
 
+	const ColorImage& getImage() const;
+
 
 private:
+	void createHandsMask();
+
+
 	std::vector< std::unique_ptr<Effect> > effects;
+
+	KinectData* kinectData;
+	ColorImage image;
+	BinaryImage handsMask;
 };
 
 

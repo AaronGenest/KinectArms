@@ -278,13 +278,10 @@ void Display(void)
 	if (showDebug)
 		depth2color(data.depthImage, visualDepthImage);
 
-	static ColorImage colorImage;
-	applyVizEffects(data, colorImage);
-	//data.colorImage.CopyTo(colorImage);
-
 	// Apply effects (new version)
+	viz.updateData(data);
 	viz.getEffect(KinectViz::kPointerCircle).enabled = true;
-	viz.applyEffects(colorImage);
+	viz.applyEffects();
 
 	// Get test image
 	static ColorImage testImage;
@@ -292,7 +289,7 @@ void Display(void)
 		CreateGraphicalImage(data, testImage);
 
 	// Set the images for viewing
-	View::SetTopLeftImage(colorImage);
+	View::SetTopLeftImage(viz.getImage());
 	View::SetTopRightImage(visualDepthImage);
 	View::SetBottomLeftImage(testImage);
 

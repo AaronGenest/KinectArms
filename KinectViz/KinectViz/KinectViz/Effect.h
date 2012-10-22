@@ -9,7 +9,7 @@ public:
 	Effect();
 	virtual ~Effect() = 0;
 
-	virtual void applyEffect(ColorImage& image) = 0;
+	virtual void applyEffect(ColorImage& image, KinectData& kinectData, BinaryImage& handsMask) = 0;
 
 	bool enabled;
 	int minHeight;

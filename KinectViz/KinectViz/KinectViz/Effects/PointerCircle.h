@@ -10,7 +10,7 @@ public:
 	PointerCircle() { }
 	~PointerCircle() { }
 
-	void applyEffect(ColorImage& image);
+	void applyEffect(ColorImage& image, KinectData& kinectData, BinaryImage& handsMask);
 };
 
 }
