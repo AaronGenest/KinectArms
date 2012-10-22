@@ -8,7 +8,9 @@
 namespace KinectViz {
 
 enum DefaultEffectHandle {
-	kPointerCircle = 0
+	kBackgroundRemover,
+	kPointerCircle,
+	kSkeleton
 };
 
 

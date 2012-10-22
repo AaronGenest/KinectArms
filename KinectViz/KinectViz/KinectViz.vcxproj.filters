@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Effects.cpp" />
+    <ClCompile Include="GLImage.cpp" />
+    <ClCompile Include="KinectVizExample.cpp" />
+    <ClCompile Include="View.cpp" />
+    <ClCompile Include="KinectViz\VizPipeline.cpp">
+      <Filter>KinectViz</Filter>
+    </ClCompile>
+    <ClCompile Include="KinectViz\Effect.cpp">
+      <Filter>KinectViz</Filter>
+    </ClCompile>
+    <ClCompile Include="KinectViz\Effects\BackgroundRemover.cpp">
+      <Filter>KinectViz\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="KinectViz\Effects\PointerCircle.cpp">
+      <Filter>KinectViz\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="KinectViz\Effects\Util.cpp">
+      <Filter>KinectViz\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="KinectViz\Effects\Skeleton.cpp">
+      <Filter>KinectViz\Effects</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Effects.h" />
+    <ClInclude Include="GLImage.h" />
+    <ClInclude Include="View.h" />
+    <ClInclude Include="KinectViz\VizPipeline.h">
+      <Filter>KinectViz</Filter>
+    </ClInclude>
+    <ClInclude Include="KinectViz\Effect.h">
+      <Filter>KinectViz</Filter>
+    </ClInclude>
+    <ClInclude Include="KinectViz\Effects\BackgroundRemover.h">
+      <Filter>KinectViz\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="KinectViz\Effects\PointerCircle.h">
+      <Filter>KinectViz\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="KinectViz\Effects\Util.h">
+      <Filter>KinectViz\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="KinectViz\Effects\Skeleton.h">
+      <Filter>KinectViz\Effects</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="KinectViz">
+      <UniqueIdentifier>{c42ff83f-48f5-4d8d-89b5-7917c37b67a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="KinectViz\Effects">
+      <UniqueIdentifier>{0cb18686-13d4-4b3d-a5c0-2a9e934fe10e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Other files">
+      <UniqueIdentifier>{7c2065bb-5655-4c27-b1de-c375e254299d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\stock.frag">
+      <Filter>Other files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

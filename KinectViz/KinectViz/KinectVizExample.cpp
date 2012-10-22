@@ -280,7 +280,9 @@ void Display(void)
 
 	// Apply effects (new version)
 	viz.updateData(data);
+	viz.getEffect(KinectViz::kBackgroundRemover).enabled = true;
 	viz.getEffect(KinectViz::kPointerCircle).enabled = true;
+	viz.getEffect(KinectViz::kSkeleton).enabled = true;
 	viz.applyEffects();
 
 	// Get test image

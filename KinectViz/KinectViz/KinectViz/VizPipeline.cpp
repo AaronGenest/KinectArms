@@ -1,10 +1,14 @@
 #include <iostream>
 #include <memory>
+#include <stdexcept>
 using namespace std;
 
 #include <DataTypes/DataTypes.h>
+#include <Util/Helpers.h>
 #include "VizPipeline.h"
 #include "Effects/PointerCircle.h"
+#include "Effects/BackgroundRemover.h"
+#include "Effects/Skeleton.h"
 
 
 namespace KinectViz {
@@ -14,7 +18,9 @@ VizPipeline::VizPipeline() :
 {
 	// Register default effects.
 	// Order of registering must be consistent with handles in DefaultEffectHandle.
+	registerEffect<BackgroundRemover>();
 	registerEffect<PointerCircle>();
+	registerEffect<Skeleton>();
 }
 
 
@@ -45,6 +51,8 @@ void VizPipeline::applyEffects() {
 
 
 Effect& VizPipeline::getEffect(int handle) {
+	if (handle >= effects.size())
+		throw invalid_argument("Invalid effect handle");
 	return *effects[handle];
 }
 
@@ -64,14 +72,14 @@ void VizPipeline::createHandsMask() {
 	// Mask for all hands
 	handsMask.rows = kinectData->depthImage.rows;
 	handsMask.cols = kinectData->depthImage.cols;
-	memset(&handsMask.data, 0, sizeof(handsMask));
+	memset(&handsMask.data, 0, sizeof(handsMask.data));
 
 	// Make a composite mask from single hand blobs
 	for (auto hand = kinectData->hands.begin(); hand != kinectData->hands.end(); hand++) {
 		hand->CreateArmBlob(singleMask, true);
 		for (int y = 0; y < handsMask.rows; y++) {
 			for (int x = 0; x < handsMask.cols; x++) {
-				handsMask.data[y][x] = handsMask.data[y][x] || handsMask.data[y][x];
+				handsMask.data[y][x] = handsMask.data[y][x] || singleMask.data[y][x];
 			}
 		}
 	}

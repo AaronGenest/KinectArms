@@ -5,10 +5,10 @@
 
 namespace KinectViz {
 
-class PointerCircle : public Effect {
+class BackgroundRemover : public Effect {
 public:
-	PointerCircle() { }
-	~PointerCircle() { }
+	BackgroundRemover() { }
+	~BackgroundRemover() { }
 
 	void applyEffect(ColorImage& image, KinectData& kinectData, BinaryImage& handsMask);
 };
