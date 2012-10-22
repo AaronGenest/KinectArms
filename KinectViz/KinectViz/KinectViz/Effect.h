@@ -2,6 +2,8 @@
 #include <DataTypes/DataTypes.h>
 
 
+namespace KinectViz {
+
 class Effect {
 public:
 	Effect();
@@ -13,3 +15,5 @@ public:
 	int minHeight;
 	int maxHeight;
 };
+
+}

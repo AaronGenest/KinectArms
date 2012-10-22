@@ -3,6 +3,8 @@
 #include "../Effect.h"
 
 
+namespace KinectViz {
+
 class PointerCircle : public Effect {
 public:
 	PointerCircle() { }
@@ -10,3 +12,5 @@ public:
 
 	void applyEffect(ColorImage& image);
 };
+
+}

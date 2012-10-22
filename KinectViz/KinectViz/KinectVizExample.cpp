@@ -30,7 +30,7 @@ static unsigned short s_depth[MAX_DEPTH];
 KinectTable::Client* client = NULL;
 extern bool showDebug;
 
-VizPipeline viz;
+KinectViz::VizPipeline viz;
 
 
 //---------------------------------------------------------------------------
@@ -283,7 +283,7 @@ void Display(void)
 	//data.colorImage.CopyTo(colorImage);
 
 	// Apply effects (new version)
-	viz.getEffect(kPointerCircle).enabled = true;
+	viz.getEffect(KinectViz::kPointerCircle).enabled = true;
 	viz.applyEffects(colorImage);
 
 	// Get test image

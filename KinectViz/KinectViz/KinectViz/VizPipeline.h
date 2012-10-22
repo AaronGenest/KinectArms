@@ -5,6 +5,8 @@
 #include "Effect.h"
 
 
+namespace KinectViz {
+
 enum DefaultEffectHandle {
 	kPointerCircle = 0
 };
@@ -16,11 +18,20 @@ public:
 	~VizPipeline();
 
 	void applyEffects(ColorImage& image);
-	int registerEffect(Effect& effect);
 	Effect& getEffect(int handle);
+
+	template <class T> int registerEffect();
 
 
 private:
-	//std::vector< std::shared_ptr<Effect> > effects;
-	std::vector<Effect*> effects;
+	std::vector< std::unique_ptr<Effect> > effects;
 };
+
+
+template <class T>
+int VizPipeline::registerEffect() {
+	effects.push_back(unique_ptr<Effect>(new T()));
+	return effects.size();
+}
+
+}

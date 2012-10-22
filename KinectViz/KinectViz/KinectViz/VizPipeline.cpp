@@ -7,15 +7,12 @@ using namespace std;
 #include "Effects/PointerCircle.h"
 
 
-VizPipeline::VizPipeline() {
-	// Create default effects
-	//shared_ptr<PointerCircle> pointerCircle(new PointerCircle());
-	auto pointerCircle = new PointerCircle();
+namespace KinectViz {
 
+VizPipeline::VizPipeline() {
 	// Register default effects.
 	// Order of registering must be consistent with handles in DefaultEffectHandle.
-	//registerEffect((Effect&)*pointerCircle);
-	registerEffect(*pointerCircle);
+	registerEffect<PointerCircle>();
 }
 
 
@@ -31,13 +28,11 @@ void VizPipeline::applyEffects(ColorImage& image) {
 }
 
 
-int VizPipeline::registerEffect(Effect& effect) {
-	//effects.push_back(shared_ptr<Effect>(&effect));
-	effects.push_back(&effect);
-	return effects.size();
+Effect& VizPipeline::getEffect(int handle) {
+	return *effects[handle];
 }
 
 
-Effect& VizPipeline::getEffect(int handle) {
-	return *effects[handle];
+// Note: definition of VizPipeline::registerEffect() templated method is in the header file.
+
 }

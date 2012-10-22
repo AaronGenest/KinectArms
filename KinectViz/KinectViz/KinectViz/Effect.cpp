@@ -1,6 +1,8 @@
 #include "Effect.h"
 
 
+namespace KinectViz {
+
 Effect::Effect() :
 	enabled(false),
 	minHeight(0),
@@ -9,4 +11,6 @@ Effect::Effect() :
 }
 
 Effect::~Effect() {
+}
+
 }
