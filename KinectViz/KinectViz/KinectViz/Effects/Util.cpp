@@ -14,6 +14,12 @@ inline void blendAndSetPixel(ColorImage &img, int x, int y, ColorPixel color, fl
 	}
 }
 
+
+int pixelHeight(const KinectData& kinectData, int x, int y) {
+	return kinectData.table.depth - kinectData.depthImage.data[y][x];
+}
+
+
 // Like the other blendAndSetPixel, but uses a stencil, not drawing on pixels where the stencil is 0
 /*void blendAndSetPixel(ColorImage &img, KinectData &data, BinaryImage &stencil, int x, int y, float alpha = 1.0f, ColorPixel color = ColorPixel::Blue) {
 	// If pixel is not in stenciled region then just draw it. If it is, we need to partially occlude it if hand is transparent.

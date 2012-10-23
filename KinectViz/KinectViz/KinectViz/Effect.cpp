@@ -10,7 +10,17 @@ Effect::Effect() :
 {
 }
 
+
 Effect::~Effect() {
+}
+
+
+bool Effect::handWithinLayer(const KinectData& kinectData, const Hand& hand) const {
+	const float height = kinectData.table.depth - hand.meanDepth;
+	if (height >= minHeight && height <= maxHeight)
+		return true;
+	else
+		return false;
 }
 
 }

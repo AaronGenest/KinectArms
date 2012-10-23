@@ -14,6 +14,10 @@ public:
 	bool enabled;
 	int minHeight;
 	int maxHeight;
+
+
+private:
+	bool handWithinLayer(const KinectData& kinectData, const Hand& hand) const;
 };
 
 }

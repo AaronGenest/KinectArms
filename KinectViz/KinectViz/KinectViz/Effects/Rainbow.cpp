@@ -27,7 +27,7 @@ void Rainbow::applyEffect(ColorImage& image, KinectData& kinectData, BinaryImage
 				continue;
 
 			// Blend the color with the arm
-			ColorPixel &color = depthToRgb[(int)(kinectData.table.depth - kinectData.depthImage.data[y][x])];
+			ColorPixel &color = depthToRgb[pixelHeight(kinectData, x, y)];
 			blendAndSetPixel(image, x, y, color, alpha);
 		}
 	}
