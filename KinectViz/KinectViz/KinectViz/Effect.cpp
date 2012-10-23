@@ -1,4 +1,5 @@
 #include "Effect.h"
+#include "Effects/Util.h"
 
 
 namespace KinectViz {
@@ -21,6 +22,20 @@ bool Effect::handWithinLayer(const KinectData& kinectData, const Hand& hand) con
 		return true;
 	else
 		return false;
+}
+
+
+bool Effect::handWithinLayer(const KinectData& kinectData, int handId) const {
+	// Make sure there's a hand with id specified by mask (should always be true)
+	const Hand* hand = handById(kinectData, handId);
+	if (hand == nullptr)
+		return false;
+
+	// Make sure the pixel belongs to a hand that's within the effect layer
+	if (!handWithinLayer(kinectData, *hand))
+		return false;
+	else
+		return true;
 }
 
 }

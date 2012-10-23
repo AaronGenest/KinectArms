@@ -26,6 +26,9 @@
     <ClCompile Include="KinectViz\Effects\Rainbow.cpp">
       <Filter>KinectViz\Effects</Filter>
     </ClCompile>
+    <ClCompile Include="KinectViz\Effects\Outline.cpp">
+      <Filter>KinectViz\Effects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Effects.h" />
@@ -50,6 +53,9 @@
       <Filter>KinectViz\Effects</Filter>
     </ClInclude>
     <ClInclude Include="KinectViz\Effects\Rainbow.h">
+      <Filter>KinectViz\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="KinectViz\Effects\Outline.h">
       <Filter>KinectViz\Effects</Filter>
     </ClInclude>
   </ItemGroup>

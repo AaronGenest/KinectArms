@@ -6,10 +6,12 @@ using namespace std;
 #include <DataTypes/DataTypes.h>
 #include <Util/Helpers.h>
 #include "VizPipeline.h"
+
 #include "Effects/PointerCircle.h"
 #include "Effects/BackgroundRemover.h"
 #include "Effects/Skeleton.h"
 #include "Effects/Rainbow.h"
+#include "Effects/Outline.h"
 
 
 namespace KinectViz {
@@ -23,6 +25,7 @@ VizPipeline::VizPipeline() :
 	registerEffect<PointerCircle>();
 	registerEffect<Rainbow>();
 	registerEffect<Skeleton>();
+	registerEffect<Outline>();
 }
 
 

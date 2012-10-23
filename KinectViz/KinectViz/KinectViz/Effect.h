@@ -20,6 +20,7 @@ public:
 
 protected:
 	bool handWithinLayer(const KinectData& kinectData, const Hand& hand) const;
+	bool handWithinLayer(const KinectData& kinectData, int handId) const;
 };
 
 }

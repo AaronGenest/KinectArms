@@ -26,13 +26,8 @@ void Rainbow::applyEffect(ColorImage& image, KinectData& kinectData, const GrayI
 			if (handsMask.data[y][x] == kMaskUnoccupied)
 				continue;
 
-			// Make sure there's a hand with id specified by mask (should always be true)
-			Hand* hand = handById(kinectData, handsMask.data[y][x]);
-			if (hand == nullptr)
-				continue;
-
 			// Make sure the pixel belongs to a hand that's within the effect layer
-			if (!handWithinLayer(kinectData, *hand))
+			if (!handWithinLayer(kinectData, handsMask.data[y][x]))
 				continue;
 
 			// Blend the color with the arm

@@ -11,7 +11,8 @@ enum DefaultEffectHandle {
 	kBackgroundRemover,
 	kPointerCircle,
 	kRainbow,
-	kSkeleton
+	kSkeleton,
+	kOutline
 };
 
 

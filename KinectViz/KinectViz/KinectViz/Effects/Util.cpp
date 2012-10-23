@@ -1,5 +1,6 @@
 #include <DataTypes\DataTypes.h>
 #include "Util.h"
+#include "../Effect.h"
 
 
 namespace KinectViz {
@@ -15,12 +16,14 @@ inline void blendAndSetPixel(ColorImage &img, int x, int y, ColorPixel color, fl
 }
 
 
+// Find height of a pixel above the table (as opposed to distance from the Kinect)
 int pixelHeight(const KinectData& kinectData, int x, int y) {
 	return kinectData.table.depth - kinectData.depthImage.data[y][x];
 }
 
 
-Hand* handById(KinectData& kinectData, int id) {
+// Find a hand by its id
+const Hand* handById(const KinectData& kinectData, int id) {
 	for (auto hand = kinectData.hands.begin(); hand != kinectData.hands.end(); hand++)
 		if (hand->id == id)
 			return &(*hand);
@@ -44,6 +47,32 @@ Hand* handById(KinectData& kinectData, int id) {
 		}
 	}
 }*/
+
+
+// Dilate (a standard image processing operation) a hands mask
+void dilateMask(GrayImage &img, int amount) {
+	static GrayImage tmp;
+	img.CopyTo(tmp);
+
+	for (int y = amount; y < img.rows - amount; y++) {
+		for (int x = amount; x < img.cols - amount; x++) {
+			// Examine neighboring pixels
+			for (int dy = -amount; dy <= amount; dy++) {
+				for (int dx = -amount; dx <= amount; dx++) {
+					if (img.data[y+dy][x+dx] != kMaskUnoccupied) {
+						tmp.data[y][x] = img.data[y+dy][x+dx];
+						goto donePixel;
+					}
+				}
+			}
+			donePixel:;
+		}
+	}
+
+	tmp.CopyTo(img);
+}
+
+
 
 // Draw a line - taken from http://www.codekeep.net/snippets/e39b2d9e-0843-4405-8e31-44e212ca1c45.aspx
 #define setPixel(x, y) { blendAndSetPixel(image, x, y, color, alpha); }

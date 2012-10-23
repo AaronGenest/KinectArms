@@ -284,8 +284,13 @@ void Display(void)
 	//viz.getEffect(KinectViz::kPointerCircle).enabled = true;
 	viz.getEffect(KinectViz::kSkeleton).enabled = true;
 	viz.getEffect(KinectViz::kRainbow).enabled = true;
+	viz.getEffect(KinectViz::kOutline).enabled = true;
+	viz.getEffect(KinectViz::kOutline).minHeight = 0;
+	viz.getEffect(KinectViz::kOutline).maxHeight = 200;
 	viz.getEffect(KinectViz::kSkeleton).minHeight = 0;
-	viz.getEffect(KinectViz::kSkeleton).maxHeight = 400;
+	viz.getEffect(KinectViz::kSkeleton).maxHeight = 200;
+	viz.getEffect(KinectViz::kRainbow).minHeight = 0;
+	viz.getEffect(KinectViz::kRainbow).maxHeight = 200;
 	viz.applyEffects();
 
 	// Get test image
