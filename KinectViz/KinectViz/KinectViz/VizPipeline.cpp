@@ -14,6 +14,10 @@ using namespace std;
 #include "Effects/Outline.h"
 #include "Effects/Tint.h"
 #include "Effects/MotionBlur.h"
+#include "Effects/Traces.h"
+#include "Effects/Shadow.h"
+#include "Effects/Transparency.h"
+#include "Effects/Tattoo.h"
 
 
 namespace KinectViz {
@@ -30,6 +34,10 @@ VizPipeline::VizPipeline() :
 	registerEffect<Skeleton>();
 	registerEffect<Outline>();
 	registerEffect<MotionBlur>();
+	registerEffect<Traces>();
+	registerEffect<Shadow>();
+	registerEffect<Transparency>();
+	registerEffect<Tattoo>();
 }
 
 

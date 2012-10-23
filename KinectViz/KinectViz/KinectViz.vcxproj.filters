@@ -35,6 +35,18 @@
     <ClCompile Include="KinectViz\Effects\MotionBlur.cpp">
       <Filter>KinectViz\Effects</Filter>
     </ClCompile>
+    <ClCompile Include="KinectViz\Effects\Traces.cpp">
+      <Filter>KinectViz\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="KinectViz\Effects\Tattoo.cpp">
+      <Filter>KinectViz\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="KinectViz\Effects\Shadow.cpp">
+      <Filter>KinectViz\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="KinectViz\Effects\Transparency.cpp">
+      <Filter>KinectViz\Effects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Effects.h" />
@@ -68,6 +80,18 @@
       <Filter>KinectViz\Effects</Filter>
     </ClInclude>
     <ClInclude Include="KinectViz\Effects\MotionBlur.h">
+      <Filter>KinectViz\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="KinectViz\Effects\Traces.h">
+      <Filter>KinectViz\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="KinectViz\Effects\Shadow.h">
+      <Filter>KinectViz\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="KinectViz\Effects\Transparency.h">
+      <Filter>KinectViz\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="KinectViz\Effects\Tattoo.h">
       <Filter>KinectViz\Effects</Filter>
     </ClInclude>
   </ItemGroup>

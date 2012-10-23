@@ -11,6 +11,10 @@
 #include "Effects/Outline.h"
 #include "Effects/Tint.h"
 #include "Effects/MotionBlur.h"
+#include "Effects/Traces.h"
+#include "Effects/Shadow.h"
+#include "Effects/Transparency.h"
+#include "Effects/Tattoo.h"
 
 
 namespace KinectViz {
@@ -22,7 +26,11 @@ enum DefaultEffectHandle {
 	kTint,
 	kSkeleton,
 	kOutline,
-	kMotionBlur
+	kMotionBlur,
+	kTraces,
+	kShadow,
+	kTransparency,
+	kTattoo
 };
 
 
