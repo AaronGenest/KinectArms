@@ -45,6 +45,7 @@ void VizPipeline::updateData(KinectData& data) {
 
 
 void VizPipeline::applyEffects() {
+	// Apply all enabled effects, in order that they're in the vector
 	for(auto effect = effects.begin(); effect != effects.end(); effect++) {
 		if ((*effect)->enabled)
 			(*effect)->applyEffect(image, *kinectData, handsMask);
@@ -74,14 +75,15 @@ void VizPipeline::createHandsMask() {
 	// Mask for all hands
 	handsMask.rows = kinectData->depthImage.rows;
 	handsMask.cols = kinectData->depthImage.cols;
-	memset(&handsMask.data, 0, sizeof(handsMask.data));
+	memset(&handsMask.data, kMaskUnoccupied, sizeof(handsMask.data));
 
-	// Make a composite mask from single hand blobs
+	// Make a composite mask from single hand blobs where a non-zero pixel indicates hand id occupying it
 	for (auto hand = kinectData->hands.begin(); hand != kinectData->hands.end(); hand++) {
 		hand->CreateArmBlob(singleMask, true);
 		for (int y = 0; y < handsMask.rows; y++) {
 			for (int x = 0; x < handsMask.cols; x++) {
-				handsMask.data[y][x] = handsMask.data[y][x] || singleMask.data[y][x];
+				if (handsMask.data[y][x] == kMaskUnoccupied && singleMask.data[y][x])
+					handsMask.data[y][x] = hand->id;
 			}
 		}
 	}

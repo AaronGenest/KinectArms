@@ -280,9 +280,12 @@ void Display(void)
 
 	// Apply effects (new version)
 	viz.updateData(data);
-	viz.getEffect(KinectViz::kBackgroundRemover).enabled = true;
-	viz.getEffect(KinectViz::kPointerCircle).enabled = true;
+	//viz.getEffect(KinectViz::kBackgroundRemover).enabled = true;
+	//viz.getEffect(KinectViz::kPointerCircle).enabled = true;
 	viz.getEffect(KinectViz::kSkeleton).enabled = true;
+	viz.getEffect(KinectViz::kRainbow).enabled = true;
+	viz.getEffect(KinectViz::kSkeleton).minHeight = 0;
+	viz.getEffect(KinectViz::kSkeleton).maxHeight = 400;
 	viz.applyEffects();
 
 	// Get test image

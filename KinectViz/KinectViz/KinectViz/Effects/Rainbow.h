@@ -10,7 +10,7 @@ public:
 	Rainbow();
 	~Rainbow() { }
 
-	void applyEffect(ColorImage& image, KinectData& kinectData, BinaryImage& handsMask);
+	void applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask);
 
 
 private:

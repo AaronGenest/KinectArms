@@ -23,7 +23,6 @@ public:
 	void updateData(KinectData& data);
 	void applyEffects();
 	Effect& getEffect(int handle);
-
 	template <class T> int registerEffect();
 
 	const ColorImage& getImage() const;
@@ -37,7 +36,7 @@ private:
 
 	KinectData* kinectData;
 	ColorImage image;
-	BinaryImage handsMask;
+	GrayImage handsMask;
 };
 
 

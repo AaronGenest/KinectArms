@@ -4,19 +4,21 @@
 
 namespace KinectViz {
 
+const GrayPixel kMaskUnoccupied = 255;
+
 class Effect {
 public:
 	Effect();
 	virtual ~Effect() = 0;
 
-	virtual void applyEffect(ColorImage& image, KinectData& kinectData, BinaryImage& handsMask) = 0;
+	virtual void applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask) = 0;
 
 	bool enabled;
 	int minHeight;
 	int maxHeight;
 
 
-private:
+protected:
 	bool handWithinLayer(const KinectData& kinectData, const Hand& hand) const;
 };
 

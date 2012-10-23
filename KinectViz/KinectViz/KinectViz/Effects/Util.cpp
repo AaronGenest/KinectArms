@@ -20,6 +20,14 @@ int pixelHeight(const KinectData& kinectData, int x, int y) {
 }
 
 
+Hand* handById(KinectData& kinectData, int id) {
+	for (auto hand = kinectData.hands.begin(); hand != kinectData.hands.end(); hand++)
+		if (hand->id == id)
+			return &(*hand);
+	return nullptr;
+}
+
+
 // Like the other blendAndSetPixel, but uses a stencil, not drawing on pixels where the stencil is 0
 /*void blendAndSetPixel(ColorImage &img, KinectData &data, BinaryImage &stencil, int x, int y, float alpha = 1.0f, ColorPixel color = ColorPixel::Blue) {
 	// If pixel is not in stenciled region then just draw it. If it is, we need to partially occlude it if hand is transparent.
