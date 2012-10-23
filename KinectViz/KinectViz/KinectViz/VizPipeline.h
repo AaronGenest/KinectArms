@@ -10,6 +10,7 @@ namespace KinectViz {
 enum DefaultEffectHandle {
 	kBackgroundRemover,
 	kPointerCircle,
+	kRainbow,
 	kSkeleton
 };
 

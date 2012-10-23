@@ -9,6 +9,7 @@ using namespace std;
 #include "Effects/PointerCircle.h"
 #include "Effects/BackgroundRemover.h"
 #include "Effects/Skeleton.h"
+#include "Effects/Rainbow.h"
 
 
 namespace KinectViz {
@@ -20,6 +21,7 @@ VizPipeline::VizPipeline() :
 	// Order of registering must be consistent with handles in DefaultEffectHandle.
 	registerEffect<BackgroundRemover>();
 	registerEffect<PointerCircle>();
+	registerEffect<Rainbow>();
 	registerEffect<Skeleton>();
 }
 

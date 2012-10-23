@@ -5,7 +5,7 @@
 namespace KinectViz {
 
 // Blend pixel old color with a new color
-inline void blendAndSetPixel(ColorImage &img, int x, int y, ColorPixel color, float alpha = 1.0f) {
+inline void blendAndSetPixel(ColorImage &img, int x, int y, ColorPixel color, float alpha) {
 	if (x >= 0 && x < img.cols && y >= 0 && y < img.rows) {
 		const int blendRed = (color.red * alpha) + ((1.0f - alpha) * img.data[y][x].red);
 		const int blendGreen = (color.green * alpha) + ((1.0f - alpha) * img.data[y][x].green);

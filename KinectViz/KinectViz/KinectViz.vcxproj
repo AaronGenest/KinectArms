@@ -107,6 +107,7 @@
     <ClInclude Include="KinectViz\Effect.h" />
     <ClInclude Include="KinectViz\Effects\BackgroundRemover.h" />
     <ClInclude Include="KinectViz\Effects\PointerCircle.h" />
+    <ClInclude Include="KinectViz\Effects\Rainbow.h" />
     <ClInclude Include="KinectViz\Effects\Skeleton.h" />
     <ClInclude Include="KinectViz\Effects\Util.h" />
     <ClInclude Include="KinectViz\VizPipeline.h" />
@@ -119,6 +120,7 @@
     <ClCompile Include="KinectViz\Effect.cpp" />
     <ClCompile Include="KinectViz\Effects\BackgroundRemover.cpp" />
     <ClCompile Include="KinectViz\Effects\PointerCircle.cpp" />
+    <ClCompile Include="KinectViz\Effects\Rainbow.cpp" />
     <ClCompile Include="KinectViz\Effects\Skeleton.cpp" />
     <ClCompile Include="KinectViz\Effects\Util.cpp" />
     <ClCompile Include="KinectViz\VizPipeline.cpp" />

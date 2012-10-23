@@ -7,10 +7,13 @@ namespace KinectViz {
 
 class BackgroundRemover : public Effect {
 public:
-	BackgroundRemover() { }
+	BackgroundRemover() : backgroundColor(ColorPixel::White) { }
 	~BackgroundRemover() { }
 
 	void applyEffect(ColorImage& image, KinectData& kinectData, BinaryImage& handsMask);
+
+
+	ColorPixel backgroundColor;
 };
 
 }
