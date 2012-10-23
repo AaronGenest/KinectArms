@@ -15,10 +15,19 @@ inline void blendAndSetPixel(ColorImage &img, int x, int y, ColorPixel color, fl
 	}
 }
 
+inline void blendAndSetPixel(ColorImage &img, const GrayImage& mask, int x, int y, ColorPixel color, float alpha) {
+	if (mask.data[y][x] == kMaskUnoccupied)
+		blendAndSetPixel(img, x, y, color, alpha);
+}
+
 
 // Find height of a pixel above the table (as opposed to distance from the Kinect)
 int pixelHeight(const KinectData& kinectData, int x, int y) {
 	return kinectData.table.depth - kinectData.depthImage.data[y][x];
+}
+
+int pixelHeight(const KinectData& kinectData, Point2Di p) {
+	return kinectData.table.depth - kinectData.depthImage.data[p.y][p.x];
 }
 
 
@@ -72,6 +81,25 @@ void dilateMask(GrayImage &img, int amount) {
 	tmp.CopyTo(img);
 }
 
+
+// Find fingertip id closest to the table for a hand
+int findClosestFingertip(const KinectData &data, const Hand& hand) {
+	if (hand.fingerTips.size() == 0)
+		return -1;
+
+	int closest = 0;
+	int closestHeight = pixelHeight(data, hand.fingerTips.front());
+
+	for (int i = 1; i < hand.fingerTips.size(); i++) {
+		int iterHeight = pixelHeight(data, hand.fingerTips[i].x, hand.fingerTips[i].y);
+		if (iterHeight < closestHeight) {
+			closest = i;
+			closestHeight = iterHeight;
+		}
+	}
+
+	return closest;
+}
 
 
 // Draw a line - taken from http://www.codekeep.net/snippets/e39b2d9e-0843-4405-8e31-44e212ca1c45.aspx
@@ -195,6 +223,49 @@ void drawLine(ColorImage &image, int p1x, int p1y, int p2x, int p2y, ColorPixel 
 				y--;
 			}
 		}
+	}
+}
+#undef setPixel
+
+
+// Draw circle on an image (algorithm taken from Wikipedia)
+#define setPixel(x, y) { blendAndSetPixel(image, mask, x, y, color, alpha); }
+void drawCircle(ColorImage& image, const KinectData& kinectData, const GrayImage& mask, Point2Di center, float radius, ColorPixel color, float alpha) {
+	const int x0 = center.x;
+	const int y0 = center.y;
+	int f = 1 - radius;
+	int ddF_x = 1;
+	int ddF_y = -2 * radius;
+	int x = 0;
+	int y = radius;
+
+	setPixel(x0, y0 + radius);
+	setPixel(x0, y0 - radius);
+	setPixel(x0 + radius, y0);
+	setPixel(x0 - radius, y0);
+
+	while(x < y)
+	{
+		// ddF_x == 2 * x + 1;
+		// ddF_y == -2 * y;
+		// f == x*x + y*y - radius*radius + 2*x - y + 1;
+		if(f >= 0)  {
+			y--;
+			ddF_y += 2;
+			f += ddF_y;
+		}
+
+		x++;
+		ddF_x += 2;
+		f += ddF_x;    
+		setPixel(x0 + x, y0 + y);
+		setPixel(x0 - x, y0 + y);
+		setPixel(x0 + x, y0 - y);
+		setPixel(x0 - x, y0 - y);
+		setPixel(x0 + y, y0 + x);
+		setPixel(x0 - y, y0 + x);
+		setPixel(x0 + y, y0 - x);
+		setPixel(x0 - y, y0 - x);
 	}
 }
 #undef setPixel

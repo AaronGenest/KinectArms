@@ -280,21 +280,6 @@ void Display(void)
 
 	// Apply effects (new version)
 	viz.updateData(data);
-
-	//viz.getEffect(KinectViz::kBackgroundRemover).enabled = true;
-	//viz.getEffect(KinectViz::kPointerCircle).enabled = true;
-	//viz.getEffect(KinectViz::kSkeleton).enabled = true;
-	//viz.getEffect(KinectViz::kRainbow).enabled = true;
-	//viz.getEffect(KinectViz::kOutline).enabled = true;
-
-	viz.getEffect(KinectViz::kOutline).minHeight = 100;
-	viz.getEffect(KinectViz::kOutline).maxHeight = 200;
-	viz.getEffect(KinectViz::kSkeleton).minHeight = 100;
-	viz.getEffect(KinectViz::kSkeleton).maxHeight = 200;
-	viz.getEffect(KinectViz::kRainbow).minHeight = 100;
-	viz.getEffect(KinectViz::kRainbow).maxHeight = 200;
-
-
 	viz.applyEffects();
 
 	// Get test image
@@ -430,13 +415,30 @@ int main(int argc, char* argv[])
 	// Set up effects
 	//
 
-	// Tint setup
+	// Pointer circle
+	viz.getEffect(KinectViz::kPointerCircle).enabled = true;
+	viz.getEffect(KinectViz::kPointerCircle).minHeight = 100;
+	viz.getEffect(KinectViz::kPointerCircle).maxHeight = 200;
+
+	// Tint
 	viz.getEffect(KinectViz::kTint).enabled = true;
 	((KinectViz::Tint&)(viz.getEffect(KinectViz::kTint))).handColors[0] = ColorPixel(255,100,100);
 	((KinectViz::Tint&)(viz.getEffect(KinectViz::kTint))).handColors[1] = ColorPixel(100,255,100);
 	((KinectViz::Tint&)(viz.getEffect(KinectViz::kTint))).handColors[2] = ColorPixel(100,100,255);
 	viz.getEffect(KinectViz::kTint).minHeight = 100;
 	viz.getEffect(KinectViz::kTint).maxHeight = 200;
+
+	//viz.getEffect(KinectViz::kBackgroundRemover).enabled = true;
+	//viz.getEffect(KinectViz::kPointerCircle).enabled = true;
+	//viz.getEffect(KinectViz::kSkeleton).enabled = true;
+	//viz.getEffect(KinectViz::kRainbow).enabled = true;
+	//viz.getEffect(KinectViz::kOutline).enabled = true;
+	viz.getEffect(KinectViz::kOutline).minHeight = 100;
+	viz.getEffect(KinectViz::kOutline).maxHeight = 200;
+	viz.getEffect(KinectViz::kSkeleton).minHeight = 100;
+	viz.getEffect(KinectViz::kSkeleton).maxHeight = 200;
+	viz.getEffect(KinectViz::kRainbow).minHeight = 100;
+	viz.getEffect(KinectViz::kRainbow).maxHeight = 200;
 
 	// Start the application
 	View::StartLoop();

@@ -7,10 +7,16 @@ namespace KinectViz {
 
 class PointerCircle : public Effect {
 public:
-	PointerCircle() { }
+	PointerCircle();
 	~PointerCircle() { }
 
 	void applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask);
+
+
+	float radiusScale;
+	float alphaScale;
+	float minRadius;
+	ColorPixel color;
 };
 
 }
