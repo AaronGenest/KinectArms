@@ -428,6 +428,11 @@ int main(int argc, char* argv[])
 	viz.getEffect(KinectViz::kTint).minHeight = 100;
 	viz.getEffect(KinectViz::kTint).maxHeight = 200;
 
+	// Motion blur
+	viz.getEffect(KinectViz::kMotionBlur).enabled = true;
+	viz.getEffect(KinectViz::kMotionBlur).minHeight = 100;
+	viz.getEffect(KinectViz::kMotionBlur).maxHeight = 300;
+
 	//viz.getEffect(KinectViz::kBackgroundRemover).enabled = true;
 	//viz.getEffect(KinectViz::kPointerCircle).enabled = true;
 	//viz.getEffect(KinectViz::kSkeleton).enabled = true;

@@ -65,7 +65,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>FreeImage.lib;Ws2_32.lib;glew32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)\..\libs;$(ProjectDir)..\..\Libs\OpenCV\build\x86\vc10\lib</AdditionalLibraryDirectories>
-      <StackReserveSize>4000000</StackReserveSize>
+      <StackReserveSize>8000000</StackReserveSize>
     </Link>
     <PostBuildEvent>
       <Command>copy "$(ProjectDir)..\libs\freeglut.dll" "$(OutDir)" /Y &amp;&amp; copy "$(ProjectDir)..\libs\glew32.dll" "$(OutDir)" /Y &amp;&amp; xcopy /s "$(ProjectDir)Shaders" "$(OutDir)Shaders" /i /Y &amp;&amp; copy "$(ProjectDir)..\libs\FreeImage.dll" "$(OutDir)" /Y</Command>
@@ -106,6 +106,7 @@
     <ClInclude Include="GLImage.h" />
     <ClInclude Include="KinectViz\Effect.h" />
     <ClInclude Include="KinectViz\Effects\BackgroundRemover.h" />
+    <ClInclude Include="KinectViz\Effects\MotionBlur.h" />
     <ClInclude Include="KinectViz\Effects\Outline.h" />
     <ClInclude Include="KinectViz\Effects\PointerCircle.h" />
     <ClInclude Include="KinectViz\Effects\Rainbow.h" />
@@ -121,6 +122,7 @@
     <ClCompile Include="KinectVizExample.cpp" />
     <ClCompile Include="KinectViz\Effect.cpp" />
     <ClCompile Include="KinectViz\Effects\BackgroundRemover.cpp" />
+    <ClCompile Include="KinectViz\Effects\MotionBlur.cpp" />
     <ClCompile Include="KinectViz\Effects\Outline.cpp" />
     <ClCompile Include="KinectViz\Effects\PointerCircle.cpp" />
     <ClCompile Include="KinectViz\Effects\Rainbow.cpp" />

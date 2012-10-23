@@ -32,6 +32,9 @@
     <ClCompile Include="KinectViz\Effects\Tint.cpp">
       <Filter>KinectViz\Effects</Filter>
     </ClCompile>
+    <ClCompile Include="KinectViz\Effects\MotionBlur.cpp">
+      <Filter>KinectViz\Effects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Effects.h" />
@@ -62,6 +65,9 @@
       <Filter>KinectViz\Effects</Filter>
     </ClInclude>
     <ClInclude Include="KinectViz\Effects\Tint.h">
+      <Filter>KinectViz\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="KinectViz\Effects\MotionBlur.h">
       <Filter>KinectViz\Effects</Filter>
     </ClInclude>
   </ItemGroup>

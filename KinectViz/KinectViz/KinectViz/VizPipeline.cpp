@@ -13,6 +13,7 @@ using namespace std;
 #include "Effects/Rainbow.h"
 #include "Effects/Outline.h"
 #include "Effects/Tint.h"
+#include "Effects/MotionBlur.h"
 
 
 namespace KinectViz {
@@ -28,6 +29,7 @@ VizPipeline::VizPipeline() :
 	registerEffect<Tint>();
 	registerEffect<Skeleton>();
 	registerEffect<Outline>();
+	registerEffect<MotionBlur>();
 }
 
 

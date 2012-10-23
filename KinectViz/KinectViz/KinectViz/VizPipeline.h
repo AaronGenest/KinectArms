@@ -10,6 +10,7 @@
 #include "Effects/Rainbow.h"
 #include "Effects/Outline.h"
 #include "Effects/Tint.h"
+#include "Effects/MotionBlur.h"
 
 
 namespace KinectViz {
@@ -20,7 +21,8 @@ enum DefaultEffectHandle {
 	kRainbow,
 	kTint,
 	kSkeleton,
-	kOutline
+	kOutline,
+	kMotionBlur
 };
 
 

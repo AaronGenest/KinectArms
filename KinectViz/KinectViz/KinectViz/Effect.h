@@ -5,6 +5,9 @@
 namespace KinectViz {
 
 const GrayPixel kMaskUnoccupied = 255;
+const int kImageWidth = 640;
+const int kImageHeight = 480;
+
 
 class Effect {
 public:
