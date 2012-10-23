@@ -50,11 +50,23 @@ void VizPipeline::updateData(KinectData& data) {
 
 
 void VizPipeline::applyEffects() {
+#if 0
+	// TEMP: measure processing time
+	static unsigned long long lastTime = Util::Helpers::GetSystemTime();
+	unsigned long long curTime;
+	curTime = Util::Helpers::GetSystemTime();
+	cout << 1000.0 / (curTime - lastTime) << endl;
+	lastTime = curTime;
+#endif
+
+
 	// Apply all enabled effects, in order that they're in the vector
+	//for (int i = 0; i < 100; i++) {  // TEMP: for increasing the processing time so it can be measured
 	for(auto effect = effects.begin(); effect != effects.end(); effect++) {
 		if ((*effect)->enabled)
 			(*effect)->applyEffect(image, *kinectData, handsMask);
 	}
+	//}
 }
 
 
