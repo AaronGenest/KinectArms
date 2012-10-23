@@ -13,8 +13,10 @@ public:
 	void applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask);
 
 
-private:
 	ColorPixel outlineColor;
+
+
+private:
 	GrayImage expandedMask;
 };
 

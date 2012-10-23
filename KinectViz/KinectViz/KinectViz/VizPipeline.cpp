@@ -12,6 +12,7 @@ using namespace std;
 #include "Effects/Skeleton.h"
 #include "Effects/Rainbow.h"
 #include "Effects/Outline.h"
+#include "Effects/Tint.h"
 
 
 namespace KinectViz {
@@ -24,6 +25,7 @@ VizPipeline::VizPipeline() :
 	registerEffect<BackgroundRemover>();
 	registerEffect<PointerCircle>();
 	registerEffect<Rainbow>();
+	registerEffect<Tint>();
 	registerEffect<Skeleton>();
 	registerEffect<Outline>();
 }

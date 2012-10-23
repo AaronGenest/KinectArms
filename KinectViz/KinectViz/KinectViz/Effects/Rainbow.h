@@ -13,13 +13,15 @@ public:
 	void applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask);
 
 
+	float alpha;
+
+
 private:
 	ColorPixel hsvToRgb(const Point3Df hsv);
 
 
 	static const int maxDepth = 1000;
-	float frequency;
-	float alpha;
+	const float frequency;
 	ColorPixel depthToRgb[maxDepth];  // size of array is based on maximum height above table to support
 };
 
