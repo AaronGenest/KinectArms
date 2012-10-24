@@ -37,34 +37,6 @@ void PointerCircle::applyEffect(ColorImage& image, KinectData& kinectData, const
 			drawCircle(image, kinectData, handsMask, hand->fingerTips[closestFinger], radius+dr, color, alpha/fade);
 		}
 	}
-
-#if 0
-	// Find fingertips closest to the table
-	std::vector<Point3Di> locations;
-	findClosestFingertip(data, locations);
-
-	for(std::vector<Point3Di>::iterator it = locations.begin(); it != locations.end(); it++) {
-		// Skip hands without fingertips
-		if (it->x == -1 && it->y == -1 && it->z == -1)
-			continue;
-
-		// Pick a pointer size and alpha based on proximity to table
-		float fingerPointerSize = it->z / 7.0f;
-		if (fingerPointerSize < minPointerSize)
-			fingerPointerSize = minPointerSize;
-		float fingerPointerAlpha = 1.0f - ((fingerPointerSize - minPointerSize) / alphaScale);
-		if (fingerPointerAlpha < 0.25f)
-			fingerPointerAlpha = 0.25f;
-
-		// Draw finger pointer ellipse/circle
-		for (int i = -5; i <= 5; i++) {
-			// TODO: tweak to make nicer maybe
-			float alphaFade = ((float)(abs(i))) + 1;
-			//alphaFade = alphaFade < 1.0f ? 1.0f : alphaFade;
-			drawCircleOnImage(img, data, stencil, it->x, it->y, (unsigned int)fingerPointerSize+i, fingerPointerAlpha / alphaFade);
-		}
-	}
-#endif
 }
 
 }

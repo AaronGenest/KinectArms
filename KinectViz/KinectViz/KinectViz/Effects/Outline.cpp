@@ -6,6 +6,9 @@
 namespace KinectViz {
 
 void Outline::applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask) {
+	if (kinectData.hands.size() == 0)
+		return;
+
 	// Create a dilated mask
 	handsMask.CopyTo(expandedMask);
 	dilateMask(expandedMask, 3);

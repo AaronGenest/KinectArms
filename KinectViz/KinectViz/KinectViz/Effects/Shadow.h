@@ -7,10 +7,16 @@ namespace KinectViz {
 
 class Shadow : public Effect {
 public:
-	Shadow() { }
+	Shadow();
 	~Shadow() { }
 
 	void applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask);
+
+
+private:
+	GrayImage depthMap;
+	int maxShadowHeight;
+	int minScaledHeight;
 };
 
 }

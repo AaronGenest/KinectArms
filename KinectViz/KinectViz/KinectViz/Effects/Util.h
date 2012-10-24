@@ -16,5 +16,7 @@ void drawLine(ColorImage &image, int p1x, int p1y, int p2x, int p2y, ColorPixel 
 void drawCircle(ColorImage& image, const KinectData& kinectData, const GrayImage& mask, Point2Di center, float radius, ColorPixel color, float alpha = 1.0f);
 
 void dilateMask(GrayImage &img, int amount);
+void erode(GrayImage &img, int amount);
+void boxBlur(GrayImage &img, int size);
 
 }

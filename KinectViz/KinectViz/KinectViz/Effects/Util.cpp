@@ -82,6 +82,30 @@ void dilateMask(GrayImage &img, int amount) {
 }
 
 
+// Erode (a standard image processing operation) a grayscale image
+void erode(GrayImage &img, int amount) {
+	static GrayImage tmp;
+	img.CopyTo(tmp);
+
+	// Two-dimensional kernel
+	for (int y = 0; y < img.rows; y++) {
+		for (int x = 0; x < img.cols; x++) {
+			// Examine neighboring pixels
+			int min = 255;
+			for (int dy = -amount; dy <= amount; dy++) {
+				for (int dx = -amount; dx <= amount; dx++) {
+					if (img.data[y+dy][x+dx] < min)
+						min = img.data[y+dy][x+dx];
+				}
+			}
+			tmp.data[y][x] = min;
+		}
+	}
+
+	tmp.CopyTo(img);
+}
+
+
 // Find fingertip id closest to the table for a hand
 int findClosestFingertip(const KinectData &data, const Hand& hand) {
 	if (hand.fingerTips.size() == 0)
@@ -269,5 +293,45 @@ void drawCircle(ColorImage& image, const KinectData& kinectData, const GrayImage
 	}
 }
 #undef setPixel
+
+
+// Box blur using summed area tables - constant time with respect to kernel size.
+// Based off http://www.openprocessing.org/sketch/2934
+void boxBlur(GrayImage &img, int size) {
+	static GrayImage tmp;
+	static int sum[480][640];
+	img.CopyTo(tmp);
+
+	// Top row and left column
+	sum[0][0] = img.data[0][0];
+	for (int x = 1; x < img.cols; ++x) {
+		sum[0][x] = sum[0][x-1] + img.data[0][x];
+	}
+	for (int y = 1; y < img.rows; ++y) {
+		sum[y][0] = sum[y-1][0] + img.data[y][0];
+	}
+
+	// Rest of summed area table
+	for (int y = 1; y < img.rows; y++) {
+		for (int x = 1; x < img.cols; x++) {
+			sum[y][x] = tmp.data[y][x] + sum[y][x-1] + sum[y-1][x] - sum[y-1][x-1];
+		}
+	}
+
+	int denom = 1.0f / (float)(((2*size) + 1) * ((2*size) + 1));
+	for (int y = 0; y < img.rows; y++) {
+		for (int x = 0; x < img.cols; x++) {
+			const int xKernSize = std::min(x, size);
+			const int yKernSize = std::min(y, size);
+			const int xMin = x - xKernSize;
+			const int yMin = y - yKernSize;
+			const int pSum = sum[y][x] - sum[yMin][x] - sum[y][xMin] + sum[yMin][xMin];
+			const int avg = pSum / std::max(xKernSize * yKernSize, 1);
+			tmp.data[y][x] = avg;
+		}
+	}
+
+	tmp.CopyTo(img);
+}
 
 }

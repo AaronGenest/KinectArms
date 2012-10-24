@@ -429,7 +429,7 @@ int main(int argc, char* argv[])
 	viz.getEffect(KinectViz::kRainbow).maxHeight = 200;
 
 	// Outline
-	viz.getEffect(KinectViz::kOutline).enabled = true;
+	viz.getEffect(KinectViz::kOutline).enabled = false;
 	viz.getEffect(KinectViz::kOutline).minHeight = 100;
 	viz.getEffect(KinectViz::kOutline).maxHeight = 200;
 
@@ -458,7 +458,7 @@ int main(int argc, char* argv[])
 
 	// Shadows
 	viz.getEffect(KinectViz::kShadow).enabled = true;
-	viz.getEffect(KinectViz::kShadow).minHeight = 100;
+	viz.getEffect(KinectViz::kShadow).minHeight = 0;
 	viz.getEffect(KinectViz::kShadow).maxHeight = 300;
 
 	// Transparency

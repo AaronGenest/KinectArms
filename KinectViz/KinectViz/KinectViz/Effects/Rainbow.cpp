@@ -20,6 +20,9 @@ Rainbow::Rainbow() :
 
 
 void Rainbow::applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask) {
+	if (kinectData.hands.size() == 0)
+		return;
+
 	for (int y = 0; y < image.rows; y++) {
 		for (int x = 0; x < image.cols; x++) {
 			// If pixel unoccupied by any hands, skip it
