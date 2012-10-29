@@ -1,0 +1,93 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KinectTableExampleCSharp", "KinectTableExampleCSharp\KinectTableExampleCSharp.csproj", "{251D01AC-3325-4B72-9E26-55623D02430F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KinectTable", "..\KinectTable\KinectTable.vcxproj", "{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KinectTableNet", "..\KinectTableNet\KinectTableNet.vcxproj", "{844EB720-FE3B-4CEC-A47F-24023E928B3E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35} = {71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug_Microsoft|Mixed Platforms = Debug_Microsoft|Mixed Platforms
+		Debug_Microsoft|Win32 = Debug_Microsoft|Win32
+		Debug_Microsoft|x86 = Debug_Microsoft|x86
+		Debug_OpenNi|Mixed Platforms = Debug_OpenNi|Mixed Platforms
+		Debug_OpenNi|Win32 = Debug_OpenNi|Win32
+		Debug_OpenNi|x86 = Debug_OpenNi|x86
+		Release_Microsoft|Mixed Platforms = Release_Microsoft|Mixed Platforms
+		Release_Microsoft|Win32 = Release_Microsoft|Win32
+		Release_Microsoft|x86 = Release_Microsoft|x86
+		Release_OpenNi|Mixed Platforms = Release_OpenNi|Mixed Platforms
+		Release_OpenNi|Win32 = Release_OpenNi|Win32
+		Release_OpenNi|x86 = Release_OpenNi|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{251D01AC-3325-4B72-9E26-55623D02430F}.Debug_Microsoft|Mixed Platforms.ActiveCfg = Debug|x86
+		{251D01AC-3325-4B72-9E26-55623D02430F}.Debug_Microsoft|Mixed Platforms.Build.0 = Debug|x86
+		{251D01AC-3325-4B72-9E26-55623D02430F}.Debug_Microsoft|Win32.ActiveCfg = Debug|x86
+		{251D01AC-3325-4B72-9E26-55623D02430F}.Debug_Microsoft|x86.ActiveCfg = Debug|x86
+		{251D01AC-3325-4B72-9E26-55623D02430F}.Debug_Microsoft|x86.Build.0 = Debug|x86
+		{251D01AC-3325-4B72-9E26-55623D02430F}.Debug_OpenNi|Mixed Platforms.ActiveCfg = Debug|x86
+		{251D01AC-3325-4B72-9E26-55623D02430F}.Debug_OpenNi|Mixed Platforms.Build.0 = Debug|x86
+		{251D01AC-3325-4B72-9E26-55623D02430F}.Debug_OpenNi|Win32.ActiveCfg = Debug|x86
+		{251D01AC-3325-4B72-9E26-55623D02430F}.Debug_OpenNi|x86.ActiveCfg = Debug|x86
+		{251D01AC-3325-4B72-9E26-55623D02430F}.Debug_OpenNi|x86.Build.0 = Debug|x86
+		{251D01AC-3325-4B72-9E26-55623D02430F}.Release_Microsoft|Mixed Platforms.ActiveCfg = Release|x86
+		{251D01AC-3325-4B72-9E26-55623D02430F}.Release_Microsoft|Mixed Platforms.Build.0 = Release|x86
+		{251D01AC-3325-4B72-9E26-55623D02430F}.Release_Microsoft|Win32.ActiveCfg = Release|x86
+		{251D01AC-3325-4B72-9E26-55623D02430F}.Release_Microsoft|x86.ActiveCfg = Release|x86
+		{251D01AC-3325-4B72-9E26-55623D02430F}.Release_Microsoft|x86.Build.0 = Release|x86
+		{251D01AC-3325-4B72-9E26-55623D02430F}.Release_OpenNi|Mixed Platforms.ActiveCfg = Release|x86
+		{251D01AC-3325-4B72-9E26-55623D02430F}.Release_OpenNi|Mixed Platforms.Build.0 = Release|x86
+		{251D01AC-3325-4B72-9E26-55623D02430F}.Release_OpenNi|Win32.ActiveCfg = Release|x86
+		{251D01AC-3325-4B72-9E26-55623D02430F}.Release_OpenNi|x86.ActiveCfg = Release|x86
+		{251D01AC-3325-4B72-9E26-55623D02430F}.Release_OpenNi|x86.Build.0 = Release|x86
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Debug_Microsoft|Mixed Platforms.ActiveCfg = Debug_Microsoft|Win32
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Debug_Microsoft|Mixed Platforms.Build.0 = Debug_Microsoft|Win32
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Debug_Microsoft|Win32.ActiveCfg = Debug_Microsoft|Win32
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Debug_Microsoft|Win32.Build.0 = Debug_Microsoft|Win32
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Debug_Microsoft|x86.ActiveCfg = Debug_Microsoft|Win32
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Debug_OpenNi|Mixed Platforms.ActiveCfg = Debug_OpenNi|Win32
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Debug_OpenNi|Mixed Platforms.Build.0 = Debug_OpenNi|Win32
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Debug_OpenNi|Win32.ActiveCfg = Debug_OpenNi|Win32
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Debug_OpenNi|Win32.Build.0 = Debug_OpenNi|Win32
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Debug_OpenNi|x86.ActiveCfg = Debug_OpenNi|Win32
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Release_Microsoft|Mixed Platforms.ActiveCfg = Release_Microsoft|Win32
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Release_Microsoft|Mixed Platforms.Build.0 = Release_Microsoft|Win32
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Release_Microsoft|Win32.ActiveCfg = Release_Microsoft|Win32
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Release_Microsoft|Win32.Build.0 = Release_Microsoft|Win32
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Release_Microsoft|x86.ActiveCfg = Release_Microsoft|Win32
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Release_OpenNi|Mixed Platforms.ActiveCfg = Release_OpenNi|Win32
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Release_OpenNi|Mixed Platforms.Build.0 = Release_OpenNi|Win32
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Release_OpenNi|Win32.ActiveCfg = Release_OpenNi|Win32
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Release_OpenNi|Win32.Build.0 = Release_OpenNi|Win32
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Release_OpenNi|x86.ActiveCfg = Release_OpenNi|Win32
+		{844EB720-FE3B-4CEC-A47F-24023E928B3E}.Debug_Microsoft|Mixed Platforms.ActiveCfg = Debug|Win32
+		{844EB720-FE3B-4CEC-A47F-24023E928B3E}.Debug_Microsoft|Mixed Platforms.Build.0 = Debug|Win32
+		{844EB720-FE3B-4CEC-A47F-24023E928B3E}.Debug_Microsoft|Win32.ActiveCfg = Debug|Win32
+		{844EB720-FE3B-4CEC-A47F-24023E928B3E}.Debug_Microsoft|Win32.Build.0 = Debug|Win32
+		{844EB720-FE3B-4CEC-A47F-24023E928B3E}.Debug_Microsoft|x86.ActiveCfg = Debug|Win32
+		{844EB720-FE3B-4CEC-A47F-24023E928B3E}.Debug_OpenNi|Mixed Platforms.ActiveCfg = Debug|Win32
+		{844EB720-FE3B-4CEC-A47F-24023E928B3E}.Debug_OpenNi|Mixed Platforms.Build.0 = Debug|Win32
+		{844EB720-FE3B-4CEC-A47F-24023E928B3E}.Debug_OpenNi|Win32.ActiveCfg = Debug|Win32
+		{844EB720-FE3B-4CEC-A47F-24023E928B3E}.Debug_OpenNi|Win32.Build.0 = Debug|Win32
+		{844EB720-FE3B-4CEC-A47F-24023E928B3E}.Debug_OpenNi|x86.ActiveCfg = Debug|Win32
+		{844EB720-FE3B-4CEC-A47F-24023E928B3E}.Release_Microsoft|Mixed Platforms.ActiveCfg = Release|Win32
+		{844EB720-FE3B-4CEC-A47F-24023E928B3E}.Release_Microsoft|Mixed Platforms.Build.0 = Release|Win32
+		{844EB720-FE3B-4CEC-A47F-24023E928B3E}.Release_Microsoft|Win32.ActiveCfg = Release|Win32
+		{844EB720-FE3B-4CEC-A47F-24023E928B3E}.Release_Microsoft|Win32.Build.0 = Release|Win32
+		{844EB720-FE3B-4CEC-A47F-24023E928B3E}.Release_Microsoft|x86.ActiveCfg = Release|Win32
+		{844EB720-FE3B-4CEC-A47F-24023E928B3E}.Release_OpenNi|Mixed Platforms.ActiveCfg = Release|Win32
+		{844EB720-FE3B-4CEC-A47F-24023E928B3E}.Release_OpenNi|Mixed Platforms.Build.0 = Release|Win32
+		{844EB720-FE3B-4CEC-A47F-24023E928B3E}.Release_OpenNi|Win32.ActiveCfg = Release|Win32
+		{844EB720-FE3B-4CEC-A47F-24023E928B3E}.Release_OpenNi|Win32.Build.0 = Release|Win32
+		{844EB720-FE3B-4CEC-A47F-24023E928B3E}.Release_OpenNi|x86.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
