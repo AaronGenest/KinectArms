@@ -85,56 +85,56 @@ int main(int argc, char* argv[])
 
 	// Skeleton
 	viz.getEffect(KinectViz::kSkeleton).enabled = false;
-	viz.getEffect(KinectViz::kSkeleton).minHeight = 100;
-	viz.getEffect(KinectViz::kSkeleton).maxHeight = 200;
+	viz.getEffect(KinectViz::kSkeleton).minHeight = 0;
+	viz.getEffect(KinectViz::kSkeleton).maxHeight = 1000;
 
 	// Rainbow
 	viz.getEffect(KinectViz::kRainbow).enabled = false;
-	viz.getEffect(KinectViz::kRainbow).minHeight = 100;
-	viz.getEffect(KinectViz::kRainbow).maxHeight = 200;
+	viz.getEffect(KinectViz::kRainbow).minHeight = 0;
+	viz.getEffect(KinectViz::kRainbow).maxHeight = 1000;
 
 	// Outline
 	viz.getEffect(KinectViz::kOutline).enabled = false;
-	viz.getEffect(KinectViz::kOutline).minHeight = 100;
-	viz.getEffect(KinectViz::kOutline).maxHeight = 200;
+	viz.getEffect(KinectViz::kOutline).minHeight = 0;
+	viz.getEffect(KinectViz::kOutline).maxHeight = 1000;
 
 	// Pointer circle
 	viz.getEffect(KinectViz::kPointerCircle).enabled = false;
-	viz.getEffect(KinectViz::kPointerCircle).minHeight = 100;
-	viz.getEffect(KinectViz::kPointerCircle).maxHeight = 200;
+	viz.getEffect(KinectViz::kPointerCircle).minHeight = 0;
+	viz.getEffect(KinectViz::kPointerCircle).maxHeight = 1000;
 
 	// Tint
 	viz.getEffect(KinectViz::kTint).enabled = false;
 	((KinectViz::Tint&)(viz.getEffect(KinectViz::kTint))).handColors[0] = ColorPixel(255,100,100);
 	((KinectViz::Tint&)(viz.getEffect(KinectViz::kTint))).handColors[1] = ColorPixel(100,255,100);
 	((KinectViz::Tint&)(viz.getEffect(KinectViz::kTint))).handColors[2] = ColorPixel(100,100,255);
-	viz.getEffect(KinectViz::kTint).minHeight = 100;
-	viz.getEffect(KinectViz::kTint).maxHeight = 200;
+	viz.getEffect(KinectViz::kTint).minHeight = 0;
+	viz.getEffect(KinectViz::kTint).maxHeight = 1000;
 
 	// Motion blur
 	viz.getEffect(KinectViz::kMotionBlur).enabled = false;
-	viz.getEffect(KinectViz::kMotionBlur).minHeight = 100;
-	viz.getEffect(KinectViz::kMotionBlur).maxHeight = 200;
+	viz.getEffect(KinectViz::kMotionBlur).minHeight = 0;
+	viz.getEffect(KinectViz::kMotionBlur).maxHeight = 1000;
 
 	// Traces
 	viz.getEffect(KinectViz::kTraces).enabled = false;
-	viz.getEffect(KinectViz::kTraces).minHeight = 100;
-	viz.getEffect(KinectViz::kTraces).maxHeight = 300;
+	viz.getEffect(KinectViz::kTraces).minHeight = 0;
+	viz.getEffect(KinectViz::kTraces).maxHeight = 1000;
 
 	// Shadows
 	viz.getEffect(KinectViz::kShadow).enabled = false;
 	viz.getEffect(KinectViz::kShadow).minHeight = 0;
-	viz.getEffect(KinectViz::kShadow).maxHeight = 300;
+	viz.getEffect(KinectViz::kShadow).maxHeight = 1000;
 
 	// Transparency
 	viz.getEffect(KinectViz::kTransparency).enabled = false;
 	viz.getEffect(KinectViz::kTransparency).minHeight = 0;
-	viz.getEffect(KinectViz::kTransparency).maxHeight = 5000;
+	viz.getEffect(KinectViz::kTransparency).maxHeight = 1000;
 
 	// Tattoos
 	viz.getEffect(KinectViz::kTattoo).enabled = false;
-	viz.getEffect(KinectViz::kTattoo).minHeight = 100;
-	viz.getEffect(KinectViz::kTattoo).maxHeight = 200;
+	viz.getEffect(KinectViz::kTattoo).minHeight = 0;
+	viz.getEffect(KinectViz::kTattoo).maxHeight = 1000;
 
 	// Start the application
 	View::StartLoop();
