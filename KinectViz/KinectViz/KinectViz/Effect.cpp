@@ -16,6 +16,11 @@ Effect::~Effect() {
 }
 
 
+void Effect::toggle() {
+	enabled = !enabled;
+}
+
+
 bool Effect::handWithinLayer(const KinectData& kinectData, const Hand& hand) const {
 	const float height = kinectData.table.depth - hand.meanDepth;
 	if (height >= minHeight && height <= maxHeight)

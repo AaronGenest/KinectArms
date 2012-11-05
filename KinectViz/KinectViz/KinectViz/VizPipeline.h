@@ -20,7 +20,6 @@
 namespace KinectViz {
 
 enum DefaultEffectHandle {
-	kBackgroundRemover,
 	kPointerCircle,
 	kRainbow,
 	kTint,
@@ -30,7 +29,8 @@ enum DefaultEffectHandle {
 	kTraces,
 	kShadow,
 	kTransparency,
-	kTattoo
+	kTattoo,
+	kBackgroundRemover
 };
 
 

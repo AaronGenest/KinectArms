@@ -15,6 +15,7 @@ public:
 	virtual ~Effect() = 0;
 
 	virtual void applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask, int timeElapsed) = 0;
+	void toggle();
 
 	bool enabled;
 	int minHeight;

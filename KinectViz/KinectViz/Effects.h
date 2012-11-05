@@ -2,11 +2,6 @@
 #include "Global/KinectTable_c.h"
 #include "GLImage.h"
 
-enum PearlMode {
-	PEARLMODE_POINTS,
-	PEARLMODE_LINES,
-	PEARLMODE_BOTH
-};
 
 struct Point3Di {
 	static float Dot(Point3Di a, Point3Di b) { return a.x*b.x + a.y*b.y + a.z*b.z; }
@@ -43,32 +38,8 @@ struct Point3Di {
 
 void applyVizEffects(KinectData &data, ColorImage &colorImage);
 
-void setTintParams(bool enabled, float minHeight, float maxHeight);
-void setArmTint(ColorPixel color, float alpha, int handId);
-void setMotionBlurParams(bool enabled, float minHeight, float maxHeight);
-void setFingerPointerParams(bool enabled, float minHeight, float maxHeight);
 void setTattoosParams(bool enabled, float minHeight, float maxHeight);
-void setHandTransparencyParams(bool enabled, float minHeight, float maxHeight);
-void setFingerTracesParams(bool enabled, float minHeight, float maxHeight, PearlMode mode = PEARLMODE_LINES, int interval = 250);
-void setRainbowArmParams(bool enabled, float minHeight, float maxHeight);
-void setShadowParams(bool enabled, float minHeight, float maxHeight);
-void setSkeletonParams(bool enabled);
-void setArmOutlineParams(bool enabled);
-
-void addShadows(ColorImage &img, BinaryImage &stencil, DepthImage &depth, int tableDepth, int meanHeight);
-bool findClosestFingertip(KinectData &data, Point3Di &location);
-void drawFingerPointer(ColorImage &img, KinectData &data, BinaryImage &stencil);
-void addMotionBlur(ColorImage &img, BinaryImage &handStencil, bool draw = true);
-void updateFingerPearls(int timeElapsed);
-void drawFingerPearls(ColorImage &img, KinectData &data, BinaryImage &stencil, PearlMode mode = PEARLMODE_BOTH);
-void createFingerPearl(ColorImage &img, KinectData &data, PearlMode mode, int elapsedTime);
-void setBackgroundImage(ColorImage &img);
-void makeRegionTransparent(ColorImage &img, BinaryImage &region, float alpha = 0.5f);
-void drawRainbowArm(ColorImage &img, KinectData &data, BinaryImage &stencil);
 bool loadTattoos();
 void updateTattoos(KinectData &data, bool doTransparency = false);
-void drawSkeleton(ColorImage &img, KinectData &data);
-void drawArmOutline(ColorImage &img, BinaryImage &stencil);
-void applyTint(ColorImage &img, KinectData &data, BinaryImage &stencil, int id);
 
 const std::vector<Tattoo> getTattoos();

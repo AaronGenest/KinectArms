@@ -44,7 +44,6 @@
 bool showDebug = true;
 
 extern bool enableTattoos;
-extern bool tattooWithinLayer;
 
 
 //---------------------------------------------------------------------------
@@ -294,7 +293,7 @@ static void Display()
 		}
 
 		// Draw tattoos
-		if (enableTattoos && tattooWithinLayer) {
+		if (enableTattoos) {
 			glActiveTexture(GL_TEXTURE0);
 			std::vector<Tattoo> tats = getTattoos();
 			for(std::vector<Tattoo>::iterator it = tats.begin(); it != tats.end(); it++) {

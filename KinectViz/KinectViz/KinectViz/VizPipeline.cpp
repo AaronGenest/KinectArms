@@ -28,7 +28,6 @@ VizPipeline::VizPipeline() :
 {
 	// Register default effects.
 	// Order of registering must be consistent with handles in DefaultEffectHandle.
-	registerEffect<BackgroundRemover>();
 	registerEffect<PointerCircle>();
 	registerEffect<Rainbow>();
 	registerEffect<Tint>();
@@ -39,6 +38,7 @@ VizPipeline::VizPipeline() :
 	registerEffect<Shadow>();
 	registerEffect<Transparency>();
 	registerEffect<Tattoo>();
+	registerEffect<BackgroundRemover>();
 }
 
 

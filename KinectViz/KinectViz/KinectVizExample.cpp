@@ -1,5 +1,6 @@
-﻿// Project
-#include <iostream>
+﻿#include <iostream>
+
+// Project
 #include "View.h"
 #include "Effects.h"
 #include "KinectViz/VizPipeline.h"
@@ -9,19 +10,6 @@
 #include "Util/Drawing.h"
 #include "Util/Helpers.h"
 
-// Effect flag toggles
-extern bool enableMotionBlur;
-extern bool enableFingerPointer;
-extern bool enableTattoos;
-extern bool enableTransparentHand;
-extern bool enableFingerPearls;
-extern bool enableRainbowArm;
-extern bool enableShadow;
-extern bool enableTint;
-extern bool enableSkeleton;
-extern bool removeBackground;
-extern bool enableArmOutline;
-extern bool enableTransparentHand;
 
 // depth lookup table
 #define MAX_DEPTH 10000
@@ -33,10 +21,207 @@ extern bool showDebug;
 KinectViz::VizPipeline viz;
 
 
+// Function prototypes
+int InitLocalSession(const SessionParameters& params);
+void SpecialInput(int key, int x, int y);
+void Init();
+void DeInit();
+void Keyboard (unsigned char key, int x, int y);
+void Display(void);
+static void raw2depth();
+void Binary2Color(const BinaryImage& binaryImage, ColorImage& colorImage);
+void depth2color(const DepthImage& depthImage, ColorImage& colorImage);
+void HighlightPoints(const ColorImage& input, const std::vector<Point2Di> points, const ColorPixel& color, ColorImage& output);
+void HighlightRegions(const ColorImage& colorImage, const BinaryImage& highlightImage, const ColorImage& highlightedColorImage);
+bool CreateGraphicalImage(KinectData& data, ColorImage& testImage);
+
+
+//---------------------------------------------------------------------------
+// Entry Point
+//---------------------------------------------------------------------------
+int main(int argc, char* argv[])
+{
+	// Set up the KinectTable session parameters
+	SessionParameters params;
+	params.dataParams.colorImageEnable = true;
+	params.dataParams.depthImageEnable = true;
+	params.dataParams.validityImageEnable = false;
+	params.dataParams.testImageEnable = showDebug;
+	params.dataParams.handsEnable = true;
+
+	// Initialize KinectTable as local session
+	int ret = InitLocalSession(params);
+	if(ret != 0) {
+		return -1;
+	}	
+
+	// Set up the initialization parameters for viewing
+	static View::InitParams initParams;
+	initParams.initFunc = Init;
+	initParams.deInitFunc = DeInit;
+	initParams.idleFunc = NULL;
+	initParams.displayFunc = Display;
+	initParams.keyboardFunc = Keyboard;
+	initParams.specialInputFunc = SpecialInput;
+	initParams.resizeFunc = NULL;
+	
+	// Initialize the viewing
+	View::Init(initParams);
+
+	// build a depth lookup table
+	raw2depth();
+
+	// Load effect texture images
+	if(!loadTattoos())
+		return 0;
+
+	//
+	// Set up effects.
+	// Note how to change tweakable parameters for each effect - look at Tint for example.
+	//
+
+	// Background removal
+	viz.getEffect(KinectViz::kBackgroundRemover).enabled = false;
+
+	// Skeleton
+	viz.getEffect(KinectViz::kSkeleton).enabled = false;
+	viz.getEffect(KinectViz::kSkeleton).minHeight = 100;
+	viz.getEffect(KinectViz::kSkeleton).maxHeight = 200;
+
+	// Rainbow
+	viz.getEffect(KinectViz::kRainbow).enabled = false;
+	viz.getEffect(KinectViz::kRainbow).minHeight = 100;
+	viz.getEffect(KinectViz::kRainbow).maxHeight = 200;
+
+	// Outline
+	viz.getEffect(KinectViz::kOutline).enabled = false;
+	viz.getEffect(KinectViz::kOutline).minHeight = 100;
+	viz.getEffect(KinectViz::kOutline).maxHeight = 200;
+
+	// Pointer circle
+	viz.getEffect(KinectViz::kPointerCircle).enabled = false;
+	viz.getEffect(KinectViz::kPointerCircle).minHeight = 100;
+	viz.getEffect(KinectViz::kPointerCircle).maxHeight = 200;
+
+	// Tint
+	viz.getEffect(KinectViz::kTint).enabled = false;
+	((KinectViz::Tint&)(viz.getEffect(KinectViz::kTint))).handColors[0] = ColorPixel(255,100,100);
+	((KinectViz::Tint&)(viz.getEffect(KinectViz::kTint))).handColors[1] = ColorPixel(100,255,100);
+	((KinectViz::Tint&)(viz.getEffect(KinectViz::kTint))).handColors[2] = ColorPixel(100,100,255);
+	viz.getEffect(KinectViz::kTint).minHeight = 100;
+	viz.getEffect(KinectViz::kTint).maxHeight = 200;
+
+	// Motion blur
+	viz.getEffect(KinectViz::kMotionBlur).enabled = false;
+	viz.getEffect(KinectViz::kMotionBlur).minHeight = 100;
+	viz.getEffect(KinectViz::kMotionBlur).maxHeight = 200;
+
+	// Traces
+	viz.getEffect(KinectViz::kTraces).enabled = false;
+	viz.getEffect(KinectViz::kTraces).minHeight = 100;
+	viz.getEffect(KinectViz::kTraces).maxHeight = 300;
+
+	// Shadows
+	viz.getEffect(KinectViz::kShadow).enabled = false;
+	viz.getEffect(KinectViz::kShadow).minHeight = 0;
+	viz.getEffect(KinectViz::kShadow).maxHeight = 300;
+
+	// Transparency
+	viz.getEffect(KinectViz::kTransparency).enabled = false;
+	viz.getEffect(KinectViz::kTransparency).minHeight = 0;
+	viz.getEffect(KinectViz::kTransparency).maxHeight = 5000;
+
+	// Tattoos
+	viz.getEffect(KinectViz::kTattoo).enabled = false;
+	viz.getEffect(KinectViz::kTattoo).minHeight = 100;
+	viz.getEffect(KinectViz::kTattoo).maxHeight = 200;
+
+	// Start the application
+	View::StartLoop();
+
+	return 0;
+}
+
+
+void Display(void)
+{
+	static ColorImage grayImage;
+	memset(grayImage.data, 0x80, sizeof(grayImage.data));
+	grayImage.rows = grayImage.maxRows;
+	grayImage.cols = grayImage.maxCols;
+
+	// Get data maps from Kinect sensor
+	static KinectData data;
+	static KinectData remoteData;
+	bool dataChanged = false;
+	try
+	{
+		dataChanged = client->GetData(data);
+	}
+	catch(...)
+	{
+		fprintf(stderr, "Error: Could not get data!");
+		return;
+	}
+	
+	if(dataChanged == false)
+		return;
+
+	//Get visual representation of the depth image
+	static ColorImage visualDepthImage;
+	if (showDebug)
+		depth2color(data.depthImage, visualDepthImage);
+
+	// Apply effects (new version)
+	viz.updateData(data);
+	viz.applyEffects();
+
+	// Get test image
+	static ColorImage testImage;
+	if (showDebug)
+		CreateGraphicalImage(data, testImage);
+
+	// Set the images for viewing
+	View::SetTopLeftImage(viz.getImage());
+	View::SetTopRightImage(visualDepthImage);
+	View::SetBottomLeftImage(testImage);
+	
+	return;
+}
+
+void Keyboard (unsigned char key, int x, int y)
+{
+	// If a number is pressed, toggle the effect with that id
+	if (key >= '0' && key <= '9') {
+		viz.getEffect(key - '0').toggle();
+		return;
+	}
+
+	switch (key) {
+	case 'b':
+		viz.getEffect(KinectViz::kBackgroundRemover).toggle();
+		break;
+	case 'd':
+		showDebug = !showDebug;
+		break;
+	case 27:  // escape
+		View::StopLoop();
+		break;
+	case 'f':
+		View::SetFullscreen();
+		break;
+	case 't':
+		client->RecalculateTableCorners();
+		break;
+	default:
+		break;
+	}
+}
+
+
 //---------------------------------------------------------------------------
 // Util Functions
 //---------------------------------------------------------------------------
-
 
 // builds a lookup table for depth2rgb
 static void raw2depth()
@@ -242,102 +427,8 @@ bool CreateGraphicalImage(KinectData& data, ColorImage& testImage)
 // GlutCode
 //---------------------------------------------------------------------------
 
-void Display(void)
-{
-	static ColorImage grayImage;
-	memset(grayImage.data, 0x80, sizeof(grayImage.data));
-	grayImage.rows = grayImage.maxRows;
-	grayImage.cols = grayImage.maxCols;
-
-	// Get data maps from Kinect sensor
-	static KinectData data;
-	static KinectData remoteData;
-	bool dataChanged = false;
-	try
-	{
-		dataChanged = client->GetData(data);
-	}
-	catch(...)
-	{
-		fprintf(stderr, "Error: Could not get data!");
-		return;
-	}
-	
-	if(dataChanged == false)
-		return;
-
-	KinectDataParams& dataParams = data.available;
-	dataParams.colorImageEnable = true;
-	dataParams.depthImageEnable = true;
-	dataParams.handsEnable = true;
-	dataParams.testImageEnable = false;
-	dataParams.validityImageEnable = false;
-
-	//Get visual representation of the depth image
-	static ColorImage visualDepthImage;
-	if (showDebug)
-		depth2color(data.depthImage, visualDepthImage);
-
-	// Apply effects (new version)
-	viz.updateData(data);
-	viz.applyEffects();
-
-	// Get test image
-	static ColorImage testImage;
-	if (showDebug)
-		CreateGraphicalImage(data, testImage);
-
-	// Set the images for viewing
-	View::SetTopLeftImage(viz.getImage());
-	View::SetTopRightImage(visualDepthImage);
-	View::SetBottomLeftImage(testImage);
-
-	// Limit framerate
-#if 0
-	static const float frameLimit = 121.0f;
-	static unsigned long long lastTime = Util::Helpers::GetSystemTime();
-	unsigned long long curTime;
-	do {
-		curTime = Util::Helpers::GetSystemTime();
-	} while(curTime - lastTime < (1.0f/frameLimit) * 1000);
-	lastTime = curTime;
-#endif
-	
-	return;
-}
-
-
 void SpecialInput(int key, int x, int y)
 {
-}
-
-void Keyboard (unsigned char key, int x, int y)
-{
-	switch (key) {
-	case '3': enableMotionBlur = !enableMotionBlur; break;
-	case '1': enableFingerPointer = !enableFingerPointer; break;
-	case '2': enableFingerPearls = !enableFingerPearls; break;
-	case '4': enableTattoos = !enableTattoos; break;
-	case '5': enableRainbowArm = !enableRainbowArm; break;
-	case '6': enableShadow = !enableShadow; break;
-	case '7': enableTint = !enableTint; break;
-	case '0': enableSkeleton = !enableSkeleton; break;
-	case '8': enableTransparentHand = !enableTransparentHand; break;
-	case '9': enableArmOutline = !enableArmOutline; break;
-	case 'b': removeBackground = !removeBackground; break;
-	case 'd': showDebug = !showDebug; break;
-		case 27:  // escape
-			View::StopLoop();
-			break;
-		case 'f':
-			View::SetFullscreen();
-			break;
-		case 't':
-			client->RecalculateTableCorners();
-			break;
-		default:
-			break;
-	}
 }
 
 void Init()
@@ -367,112 +458,6 @@ int InitLocalSession(const SessionParameters& params)
 			default: assert(false); break;
 		}
 	}
-
-	return 0;
-}
-
-
-//---------------------------------------------------------------------------
-// Entry Point
-//---------------------------------------------------------------------------
-int main(int argc, char* argv[])
-{
-	//Set up the session parameters
-	SessionParameters params;
-	params.dataParams.colorImageEnable = true;
-	params.dataParams.depthImageEnable = true;
-	params.dataParams.validityImageEnable = false;
-	params.dataParams.testImageEnable = showDebug;
-	params.dataParams.handsEnable = true;
-
-	// Print out menu
-	int ret = InitLocalSession(params);
-	if(ret != 0) {
-		return -1;
-	}	
-
-	// Set up the initialization parameters for viewing
-	static View::InitParams initParams;
-	initParams.initFunc = Init;
-	initParams.deInitFunc = DeInit;
-	initParams.idleFunc = NULL;
-	initParams.displayFunc = Display;
-	initParams.keyboardFunc = Keyboard;
-	initParams.specialInputFunc = SpecialInput;
-	initParams.resizeFunc = NULL;
-	
-	// Initialize the viewing
-	View::Init(initParams);
-
-	// build a depth lookup table
-	raw2depth();
-
-	// Load effect texture images
-	if(!loadTattoos())
-		return 0;
-
-	//
-	// Set up effects
-	//
-
-	// Background removal
-	viz.getEffect(KinectViz::kBackgroundRemover).enabled = false;
-
-	// Skeleton
-	viz.getEffect(KinectViz::kSkeleton).enabled = false;
-	viz.getEffect(KinectViz::kSkeleton).minHeight = 100;
-	viz.getEffect(KinectViz::kSkeleton).maxHeight = 200;
-
-	// Rainbow
-	viz.getEffect(KinectViz::kRainbow).enabled = false;
-	viz.getEffect(KinectViz::kRainbow).minHeight = 100;
-	viz.getEffect(KinectViz::kRainbow).maxHeight = 200;
-
-	// Outline
-	viz.getEffect(KinectViz::kOutline).enabled = false;
-	viz.getEffect(KinectViz::kOutline).minHeight = 100;
-	viz.getEffect(KinectViz::kOutline).maxHeight = 200;
-
-	// Pointer circle
-	viz.getEffect(KinectViz::kPointerCircle).enabled = false;
-	viz.getEffect(KinectViz::kPointerCircle).minHeight = 100;
-	viz.getEffect(KinectViz::kPointerCircle).maxHeight = 200;
-
-	// Tint
-	viz.getEffect(KinectViz::kTint).enabled = false;
-	((KinectViz::Tint&)(viz.getEffect(KinectViz::kTint))).handColors[0] = ColorPixel(255,100,100);
-	((KinectViz::Tint&)(viz.getEffect(KinectViz::kTint))).handColors[1] = ColorPixel(100,255,100);
-	((KinectViz::Tint&)(viz.getEffect(KinectViz::kTint))).handColors[2] = ColorPixel(100,100,255);
-	viz.getEffect(KinectViz::kTint).minHeight = 100;
-	viz.getEffect(KinectViz::kTint).maxHeight = 200;
-
-	// Motion blur
-	viz.getEffect(KinectViz::kMotionBlur).enabled = false;
-	viz.getEffect(KinectViz::kMotionBlur).minHeight = 100;
-	viz.getEffect(KinectViz::kMotionBlur).maxHeight = 200;
-
-	// Traces
-	viz.getEffect(KinectViz::kTraces).enabled = true;
-	viz.getEffect(KinectViz::kTraces).minHeight = 100;
-	viz.getEffect(KinectViz::kTraces).maxHeight = 300;
-
-	// Shadows
-	viz.getEffect(KinectViz::kShadow).enabled = false;
-	viz.getEffect(KinectViz::kShadow).minHeight = 0;
-	viz.getEffect(KinectViz::kShadow).maxHeight = 300;
-
-	// Transparency
-	viz.getEffect(KinectViz::kTransparency).enabled = false;
-	viz.getEffect(KinectViz::kTransparency).minHeight = 0;
-	viz.getEffect(KinectViz::kTransparency).maxHeight = 5000;
-
-	// Tattoos
-	viz.getEffect(KinectViz::kTattoo).enabled = false;
-	viz.getEffect(KinectViz::kTattoo).minHeight = 100;
-	viz.getEffect(KinectViz::kTattoo).maxHeight = 200;
-
-	// Start the application
-	View::StartLoop();
 
 	return 0;
 }
