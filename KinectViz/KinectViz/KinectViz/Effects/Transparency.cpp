@@ -8,7 +8,7 @@ namespace KinectViz {
 Transparency::Transparency() :
 	frameCount(0),
 	saveBackgroundOnFrame(15),
-	alphaScale(500.0f)
+	alphaScale(700.0f)
 {
 }
 
@@ -34,9 +34,11 @@ void Transparency::applyEffect(ColorImage& image, KinectData& kinectData, const 
 			if (!handWithinLayer(kinectData, handId))
 				continue;
 
+			// Base transparency on height above table and clamp between 0.1f and 1.0f
 			const float alpha = std::min(std::max(
 				pixelHeight(kinectData, kinectData.hands[handId].centroid) / alphaScale,
 				0.1f), 1.0f);
+
 			blendAndSetPixel(image, x, y, savedBackground.data[y][x], alpha);
 		}
 	}
