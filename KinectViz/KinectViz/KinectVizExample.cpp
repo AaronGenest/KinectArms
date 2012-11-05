@@ -457,14 +457,14 @@ int main(int argc, char* argv[])
 	viz.getEffect(KinectViz::kTraces).maxHeight = 200;
 
 	// Shadows
-	viz.getEffect(KinectViz::kShadow).enabled = true;
+	viz.getEffect(KinectViz::kShadow).enabled = false;
 	viz.getEffect(KinectViz::kShadow).minHeight = 0;
 	viz.getEffect(KinectViz::kShadow).maxHeight = 300;
 
 	// Transparency
-	viz.getEffect(KinectViz::kTransparency).enabled = false;
-	viz.getEffect(KinectViz::kTransparency).minHeight = 100;
-	viz.getEffect(KinectViz::kTransparency).maxHeight = 200;
+	viz.getEffect(KinectViz::kTransparency).enabled = true;
+	viz.getEffect(KinectViz::kTransparency).minHeight = 0;
+	viz.getEffect(KinectViz::kTransparency).maxHeight = 5000;
 
 	// Tattoos
 	viz.getEffect(KinectViz::kTattoo).enabled = false;

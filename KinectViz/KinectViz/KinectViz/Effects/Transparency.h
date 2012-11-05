@@ -7,10 +7,18 @@ namespace KinectViz {
 
 class Transparency : public Effect {
 public:
-	Transparency() { }
+	Transparency();
 	~Transparency() { }
 
 	void applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask);
+
+	float alphaScale;
+
+
+private:
+	ColorImage savedBackground;
+	int frameCount;
+	const int saveBackgroundOnFrame;
 };
 
 }
