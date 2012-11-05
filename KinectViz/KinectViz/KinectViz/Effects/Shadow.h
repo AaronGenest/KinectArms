@@ -10,7 +10,7 @@ public:
 	Shadow();
 	~Shadow() { }
 
-	void applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask);
+	void applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask, int timeElapsed);
 
 
 private:

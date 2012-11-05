@@ -10,7 +10,7 @@ public:
 	Outline() : outlineColor(ColorPixel(0, 63, 123)) { }
 	~Outline() { }
 
-	void applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask);
+	void applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask, int timeElapsed);
 
 
 	ColorPixel outlineColor;

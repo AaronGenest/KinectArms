@@ -4,7 +4,7 @@
 
 namespace KinectViz {
 
-void BackgroundRemover::applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask) {
+void BackgroundRemover::applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask, int timeElapsed) {
 	// Set any non-hand pixel to white
 	for (int y = 0; y < image.rows; y++) {
 		for (int x = 0; x < image.cols; x++) {

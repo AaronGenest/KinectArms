@@ -23,7 +23,8 @@ using namespace std;
 namespace KinectViz {
 
 VizPipeline::VizPipeline() :
-	kinectData(nullptr)
+	kinectData(nullptr),
+	lastTime(Util::Helpers::GetSystemTime())
 {
 	// Register default effects.
 	// Order of registering must be consistent with handles in DefaultEffectHandle.
@@ -60,23 +61,22 @@ void VizPipeline::updateData(KinectData& data) {
 
 
 void VizPipeline::applyEffects() {
-#if 0
-	// TEMP: measure processing time
-	static unsigned long long lastTime = Util::Helpers::GetSystemTime();
-	unsigned long long curTime;
-	curTime = Util::Helpers::GetSystemTime();
-	cout << 1000.0 / (curTime - lastTime) << endl;
-	lastTime = curTime;
-#endif
+	auto curTime = Util::Helpers::GetSystemTime();
+	auto timeElapsed = (int)(curTime - lastTime);
 
+#if 0
+	cout << "FPS: " << 1000.0 / timeElapsed << endl;
+#endif
 
 	// Apply all enabled effects, in order that they're in the vector
 	//for (int i = 0; i < 100; i++) {  // TEMP: for increasing the processing time so it can be measured
 	for(auto effect = effects.begin(); effect != effects.end(); effect++) {
 		if ((*effect)->enabled)
-			(*effect)->applyEffect(image, *kinectData, handsMask);
+			(*effect)->applyEffect(image, *kinectData, handsMask, timeElapsed);
 	}
 	//}
+
+	lastTime = curTime;
 }
 
 

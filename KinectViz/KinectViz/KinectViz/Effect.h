@@ -14,7 +14,7 @@ public:
 	Effect();
 	virtual ~Effect() = 0;
 
-	virtual void applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask) = 0;
+	virtual void applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask, int timeElapsed) = 0;
 
 	bool enabled;
 	int minHeight;
@@ -34,7 +34,6 @@ struct Point3i {
 
 	Point3i() : x(0), y(0), z(0) { }
 	Point3i(int x, int y, int z) : x(x), y(y), z(z) { }
-	Point3i(const Point3i& point, int z) : x(point.x), y(point.y), z(z) { }
 	Point3i(const Point3i& point) : x(point.x), y(point.y), z(point.z) { }
 
 	Point3i& operator=(const Point3i& a) {

@@ -5,7 +5,7 @@
 
 namespace KinectViz {
 
-void Tattoo::applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask) {
+void Tattoo::applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask, int timeElapsed) {
 	
 }
 

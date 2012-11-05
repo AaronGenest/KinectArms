@@ -12,7 +12,7 @@ public:
 	Tint() : defaultColor(ColorPixel(255,0,0)), defaultAlpha(0.5f) { }
 	~Tint() { }
 
-	void applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask);
+	void applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask, int timeElapsed);
 
 
 	std::map<int, float> handAlphas;

@@ -10,7 +10,7 @@ public:
 	Transparency();
 	~Transparency() { }
 
-	void applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask);
+	void applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask, int timeElapsed);
 
 	float alphaScale;
 

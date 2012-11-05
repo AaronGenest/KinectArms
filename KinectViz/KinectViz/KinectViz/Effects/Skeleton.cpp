@@ -5,7 +5,7 @@
 
 namespace KinectViz {
 
-void Skeleton::applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask) {
+void Skeleton::applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask, int timeElapsed) {
 	// Draw each hand's skeleton
 	for (std::vector<Hand>::const_iterator hand = kinectData.hands.begin(); hand < kinectData.hands.end(); hand++) {
 		if (hand->armBase.x == -1 || hand->palmCenter.x == -1)

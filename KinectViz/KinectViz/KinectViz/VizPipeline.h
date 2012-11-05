@@ -56,6 +56,7 @@ private:
 	KinectData* kinectData;
 	ColorImage image;
 	GrayImage handsMask;
+	unsigned long long lastTime;
 };
 
 

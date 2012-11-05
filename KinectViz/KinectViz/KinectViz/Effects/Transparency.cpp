@@ -12,7 +12,7 @@ Transparency::Transparency() :
 {
 }
 
-void Transparency::applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask) {
+void Transparency::applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask, int timeElapsed) {
 	// Save the background after some set number of frames, giving the Kinect time to adjust exposure
 	frameCount++;
 	if (frameCount == saveBackgroundOnFrame) {
@@ -35,8 +35,11 @@ void Transparency::applyEffect(ColorImage& image, KinectData& kinectData, const 
 				continue;
 
 			// Base transparency on height above table and clamp between 0.1f and 1.0f
+			auto hand = handById(kinectData, handId);
+			if (hand == nullptr)
+				continue;
 			const float alpha = std::min(std::max(
-				pixelHeight(kinectData, kinectData.hands[handId].centroid) / alphaScale,
+				pixelHeight(kinectData, hand->centroid) / alphaScale,
 				0.1f), 1.0f);
 
 			blendAndSetPixel(image, x, y, savedBackground.data[y][x], alpha);

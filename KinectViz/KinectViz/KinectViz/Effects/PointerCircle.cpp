@@ -15,7 +15,7 @@ PointerCircle::PointerCircle() :
 }
 
 
-void PointerCircle::applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask) {
+void PointerCircle::applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask, int timeElapsed) {
 	for (auto hand = kinectData.hands.begin(); hand != kinectData.hands.end(); hand++) {
 		// Skip this hand if it's not in effect layer
 		if (!handWithinLayer(kinectData, *hand))

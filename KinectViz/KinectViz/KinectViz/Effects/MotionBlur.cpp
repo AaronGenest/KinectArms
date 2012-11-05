@@ -21,7 +21,7 @@ MotionBlur::MotionBlur() :
 }
 
 
-void MotionBlur::applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask) {
+void MotionBlur::applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask, int timeElapsed) {
 	for (int y = 0; y < image.rows; y++) {
 		for (int x = 0; x < image.cols; x++) {
 			// Leave the area where hand currently is alone

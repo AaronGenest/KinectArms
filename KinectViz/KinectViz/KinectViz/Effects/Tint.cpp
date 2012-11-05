@@ -5,7 +5,7 @@
 
 namespace KinectViz {
 
-void Tint::applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask) {
+void Tint::applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask, int timeElapsed) {
 	if (kinectData.hands.size() == 0)
 		return;
 

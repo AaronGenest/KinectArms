@@ -15,7 +15,7 @@ Shadow::Shadow() :
 }
 
 
-void Shadow::applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask) {
+void Shadow::applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask, int timeElapsed) {
 	if (kinectData.hands.size() == 0)
 		return;
 
