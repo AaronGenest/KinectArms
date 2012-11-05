@@ -51,8 +51,8 @@ Global
 		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Debug_Microsoft|Win32.ActiveCfg = Debug_Microsoft|Win32
 		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Debug_Microsoft|Win32.Build.0 = Debug_Microsoft|Win32
 		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Debug_Microsoft|x86.ActiveCfg = Debug_Microsoft|Win32
-		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Debug_OpenNi|Mixed Platforms.ActiveCfg = Debug_OpenNi|Win32
-		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Debug_OpenNi|Mixed Platforms.Build.0 = Debug_OpenNi|Win32
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Debug_OpenNi|Mixed Platforms.ActiveCfg = Debug|Win32
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Debug_OpenNi|Mixed Platforms.Build.0 = Debug|Win32
 		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Debug_OpenNi|Win32.ActiveCfg = Debug_OpenNi|Win32
 		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Debug_OpenNi|Win32.Build.0 = Debug_OpenNi|Win32
 		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Debug_OpenNi|x86.ActiveCfg = Debug_OpenNi|Win32
@@ -61,8 +61,8 @@ Global
 		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Release_Microsoft|Win32.ActiveCfg = Release_Microsoft|Win32
 		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Release_Microsoft|Win32.Build.0 = Release_Microsoft|Win32
 		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Release_Microsoft|x86.ActiveCfg = Release_Microsoft|Win32
-		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Release_OpenNi|Mixed Platforms.ActiveCfg = Release_OpenNi|Win32
-		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Release_OpenNi|Mixed Platforms.Build.0 = Release_OpenNi|Win32
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Release_OpenNi|Mixed Platforms.ActiveCfg = Release|Win32
+		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Release_OpenNi|Mixed Platforms.Build.0 = Release|Win32
 		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Release_OpenNi|Win32.ActiveCfg = Release_OpenNi|Win32
 		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Release_OpenNi|Win32.Build.0 = Release_OpenNi|Win32
 		{71A3AEE8-5F2D-4335-A7A5-AA82633B8A35}.Release_OpenNi|x86.ActiveCfg = Release_OpenNi|Win32
