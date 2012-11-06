@@ -23,8 +23,8 @@ private:
 	void drawTraces(ColorImage& image);
 
 	std::vector< std::vector<Point3i> > tracesPerHand;
-	OneEuroFilter x;
-	OneEuroFilter y;
+	std::vector<OneEuroFilter> xFilterPerHand;
+	std::vector<OneEuroFilter> yFilterPerHand;
 };
 
 }

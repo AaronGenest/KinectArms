@@ -8,9 +8,7 @@ namespace KinectViz {
 
 Traces::Traces() :
 	maxTraceAge(3000),
-	color(220, 150, 0),
-	x(1.0f, 1.0f, 0.1f),
-	y(1.0f, 1.0f, 0.1f)
+	color(220, 150, 0)
 {
 }
 
@@ -37,17 +35,19 @@ void Traces::addTraces(KinectData& kinectData, int timeElapsed) {
 		if (closestFinger == -1)
 			continue;
 
-		// Expand the traces location buffer if needed
-		while (hand->id >= tracesPerHand.size())
+		// Expand the per-hand buffers if needed
+		while (hand->id >= tracesPerHand.size()) {
 			tracesPerHand.push_back(std::vector<Point3i>());
+			xFilterPerHand.push_back(OneEuroFilter(1.0f, 1.0f, 0.1f));
+			yFilterPerHand.push_back(OneEuroFilter(1.0f, 1.0f, 0.1f));
+		}
 
 		// TODO: if trace is far from last position, reset the history
 
 		// Filter the new point and add a trace
 		const Point2Di tip = hand->fingerTips[closestFinger];
-		const float filteredX = x.filter(tip.x, (float)timeElapsed);
-		const float filteredY = y.filter(tip.y, (float)timeElapsed);
-		std::cout << "y=" << tip.y << "   filtered=" << filteredY << std::endl;
+		const float filteredX = xFilterPerHand[hand->id].filter(tip.x, (float)timeElapsed);
+		const float filteredY = yFilterPerHand[hand->id].filter(tip.y, (float)timeElapsed);
 		const Point3i tipWithTime(filteredX, filteredY, 0);
 		tracesPerHand[hand->id].push_back(tipWithTime);
 	}
