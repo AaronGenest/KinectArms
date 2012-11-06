@@ -574,10 +574,12 @@ void FindFingerTips(const std::vector<Point2Di>& boundary, const Point2Di& armBa
 	for(size_t j=0; j<fingerTipIndices.size(); j++)
 	{
 		const Point2Di& point = boundary[fingerTipIndices[j]];
-		float pointMagnitude = (point - armBase).Magnitude();
+		const float pointToArmBaseDist = (point - armBase).Magnitude();
+		const float pointToArmCenterDist = (point - armCenter).Magnitude();
 		
-		if(pointMagnitude > armCenterMagnitude)
+		if(pointToArmBaseDist > pointToArmCenterDist) {
 			fingerTips.push_back(point);
+		}
 	}
 	
 	for(size_t j=0; j<fingerBaseIndices.size(); j++)
