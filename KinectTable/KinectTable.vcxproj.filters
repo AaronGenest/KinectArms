@@ -1,422 +1,465 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\ImageProcessing">
-      <UniqueIdentifier>{8a837487-2cb0-4b63-b623-f65e67296461}</UniqueIdentifier>
+    <Filter Include="Serializers">
+      <UniqueIdentifier>{1fa7711e-e7e1-4459-9b6b-88c582c8780d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Util">
-      <UniqueIdentifier>{85e608d6-c706-47fb-aa9f-638d8bfef1d7}</UniqueIdentifier>
+    <Filter Include="Serialization">
+      <UniqueIdentifier>{3eeb00f2-af18-49a3-91ab-bec94d9ff8f9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Codecs">
+    <Filter Include="Randomization">
+      <UniqueIdentifier>{9063a8ce-75ab-4fca-ae2c-fd4f316655f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Codecs">
       <UniqueIdentifier>{9d6081f2-1cfe-4a3d-91bd-f2cd31b41e09}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Global">
-      <UniqueIdentifier>{75d546ae-b206-43ea-8c47-3d0ea13cbe4d}</UniqueIdentifier>
+    <Filter Include="DataTypes">
+      <UniqueIdentifier>{ca291c65-8668-4731-9ace-6039db622441}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\KinectTable">
+    <Filter Include="ImageProcessing">
+      <UniqueIdentifier>{8a837487-2cb0-4b63-b623-f65e67296461}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="KinectTable">
       <UniqueIdentifier>{77122467-b370-4f30-be4b-febd603a642c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Unused">
-      <UniqueIdentifier>{7b8e8670-f048-4af4-bc0c-f9899b273f6a}</UniqueIdentifier>
+    <Filter Include="Global">
+      <UniqueIdentifier>{75d546ae-b206-43ea-8c47-3d0ea13cbe4d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Testing">
-      <UniqueIdentifier>{b7debd9d-f87d-444b-a1e3-86f626f634f9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Network">
+    <Filter Include="Network">
       <UniqueIdentifier>{d14303d9-9e1e-4b5d-a6ee-41b1ea2332bd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Sockets">
-      <UniqueIdentifier>{60e55fd6-e796-4c78-8f95-966f30c526e4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Threading">
-      <UniqueIdentifier>{66163250-36f8-4fa5-91c8-6d28be3e4022}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Template">
-      <UniqueIdentifier>{ee0d616b-80e9-4ef4-ae51-fbc470b62ea4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Sensors">
+    <Filter Include="Sensors">
       <UniqueIdentifier>{6d240ecc-8fe8-496b-a2e3-f605d71bfd2b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\DataTypes">
-      <UniqueIdentifier>{ca291c65-8668-4731-9ace-6039db622441}</UniqueIdentifier>
+    <Filter Include="Template">
+      <UniqueIdentifier>{ee0d616b-80e9-4ef4-ae51-fbc470b62ea4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Threading">
+      <UniqueIdentifier>{66163250-36f8-4fa5-91c8-6d28be3e4022}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sockets">
+      <UniqueIdentifier>{60e55fd6-e796-4c78-8f95-966f30c526e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Testing">
+      <UniqueIdentifier>{b7debd9d-f87d-444b-a1e3-86f626f634f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unused">
+      <UniqueIdentifier>{7b8e8670-f048-4af4-bc0c-f9899b273f6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util">
+      <UniqueIdentifier>{85e608d6-c706-47fb-aa9f-638d8bfef1d7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Codecs\Codecs.h">
-      <Filter>Source Files\Codecs</Filter>
+      <Filter>Codecs</Filter>
     </ClInclude>
     <ClInclude Include="Codecs\RunLengthEncoder.h">
-      <Filter>Source Files\Codecs</Filter>
+      <Filter>Codecs</Filter>
     </ClInclude>
     <ClInclude Include="Codecs\RunLengthEncoder.hpp">
-      <Filter>Source Files\Codecs</Filter>
+      <Filter>Codecs</Filter>
     </ClInclude>
     <ClInclude Include="Codecs\ZlibEncoder.h">
-      <Filter>Source Files\Codecs</Filter>
+      <Filter>Codecs</Filter>
     </ClInclude>
     <ClInclude Include="Codecs\ZlibEncoder.hpp">
-      <Filter>Source Files\Codecs</Filter>
+      <Filter>Codecs</Filter>
     </ClInclude>
     <ClInclude Include="Global\KinectTable_c.h">
-      <Filter>Source Files\Global</Filter>
+      <Filter>Global</Filter>
     </ClInclude>
     <ClInclude Include="Global\Testing_c.h">
-      <Filter>Source Files\Global</Filter>
+      <Filter>Global</Filter>
     </ClInclude>
     <ClInclude Include="KinectTable\KinectTable.h">
-      <Filter>Source Files\KinectTable</Filter>
+      <Filter>KinectTable</Filter>
     </ClInclude>
     <ClInclude Include="Network\Client.h">
-      <Filter>Source Files\Network</Filter>
+      <Filter>Network</Filter>
     </ClInclude>
     <ClInclude Include="Network\ClientListener.h">
-      <Filter>Source Files\Network</Filter>
+      <Filter>Network</Filter>
     </ClInclude>
     <ClInclude Include="Network\Framer.h">
-      <Filter>Source Files\Network</Filter>
+      <Filter>Network</Filter>
     </ClInclude>
     <ClInclude Include="Network\Network.h">
-      <Filter>Source Files\Network</Filter>
+      <Filter>Network</Filter>
     </ClInclude>
     <ClInclude Include="Network\RemoteClient.h">
-      <Filter>Source Files\Network</Filter>
+      <Filter>Network</Filter>
     </ClInclude>
     <ClInclude Include="Network\Server.h">
-      <Filter>Source Files\Network</Filter>
+      <Filter>Network</Filter>
     </ClInclude>
     <ClInclude Include="Sockets\Packet.h">
-      <Filter>Source Files\Sockets</Filter>
+      <Filter>Sockets</Filter>
     </ClInclude>
     <ClInclude Include="Sockets\Packetizer.h">
-      <Filter>Source Files\Sockets</Filter>
+      <Filter>Sockets</Filter>
     </ClInclude>
     <ClInclude Include="Sockets\Serializer.h">
-      <Filter>Source Files\Sockets</Filter>
+      <Filter>Sockets</Filter>
     </ClInclude>
     <ClInclude Include="Sockets\Sockets.h">
-      <Filter>Source Files\Sockets</Filter>
+      <Filter>Sockets</Filter>
     </ClInclude>
     <ClInclude Include="Sockets\TcpListener.h">
-      <Filter>Source Files\Sockets</Filter>
+      <Filter>Sockets</Filter>
     </ClInclude>
     <ClInclude Include="Sockets\TcpSocket.h">
-      <Filter>Source Files\Sockets</Filter>
+      <Filter>Sockets</Filter>
     </ClInclude>
     <ClInclude Include="Template\Template.h">
-      <Filter>Source Files\Template</Filter>
+      <Filter>Template</Filter>
     </ClInclude>
     <ClInclude Include="Template\TemplateClass.h">
-      <Filter>Source Files\Template</Filter>
+      <Filter>Template</Filter>
     </ClInclude>
     <ClInclude Include="Testing\ClientSpeedTest.h">
-      <Filter>Source Files\Testing</Filter>
+      <Filter>Testing</Filter>
     </ClInclude>
     <ClInclude Include="Testing\ClientTest.h">
-      <Filter>Source Files\Testing</Filter>
+      <Filter>Testing</Filter>
     </ClInclude>
     <ClInclude Include="Testing\FramerTest.h">
-      <Filter>Source Files\Testing</Filter>
+      <Filter>Testing</Filter>
     </ClInclude>
     <ClInclude Include="Testing\SocketSpeedTest.h">
-      <Filter>Source Files\Testing</Filter>
+      <Filter>Testing</Filter>
     </ClInclude>
     <ClInclude Include="Testing\SocketTest.h">
-      <Filter>Source Files\Testing</Filter>
+      <Filter>Testing</Filter>
     </ClInclude>
     <ClInclude Include="Testing\Testing.h">
-      <Filter>Source Files\Testing</Filter>
+      <Filter>Testing</Filter>
     </ClInclude>
     <ClInclude Include="Threading\Mutex.h">
-      <Filter>Source Files\Threading</Filter>
+      <Filter>Threading</Filter>
     </ClInclude>
     <ClInclude Include="Threading\Thread.h">
-      <Filter>Source Files\Threading</Filter>
+      <Filter>Threading</Filter>
     </ClInclude>
     <ClInclude Include="Threading\Threading.h">
-      <Filter>Source Files\Threading</Filter>
+      <Filter>Threading</Filter>
     </ClInclude>
     <ClInclude Include="Testing\HandDetectionTest.h">
-      <Filter>Source Files\Testing</Filter>
+      <Filter>Testing</Filter>
     </ClInclude>
     <ClInclude Include="Testing\TableDetectionTest.h">
-      <Filter>Source Files\Testing</Filter>
+      <Filter>Testing</Filter>
     </ClInclude>
     <ClInclude Include="Util\DataExporter.h">
-      <Filter>Source Files\Util</Filter>
+      <Filter>Util</Filter>
     </ClInclude>
     <ClInclude Include="ImageProcessing\TableDetection.h">
-      <Filter>Source Files\ImageProcessing</Filter>
+      <Filter>ImageProcessing</Filter>
     </ClInclude>
     <ClInclude Include="KinectTable\LocalClient.h">
-      <Filter>Source Files\KinectTable</Filter>
+      <Filter>KinectTable</Filter>
     </ClInclude>
     <ClInclude Include="KinectTable\Client.h">
-      <Filter>Source Files\KinectTable</Filter>
+      <Filter>KinectTable</Filter>
     </ClInclude>
     <ClInclude Include="Util\Drawing.h">
-      <Filter>Source Files\Util</Filter>
+      <Filter>Util</Filter>
     </ClInclude>
     <ClInclude Include="Testing\Tests.h">
-      <Filter>Source Files\Testing</Filter>
+      <Filter>Testing</Filter>
     </ClInclude>
     <ClInclude Include="Sensors\DataProcessor.h">
-      <Filter>Source Files\Sensors</Filter>
+      <Filter>Sensors</Filter>
     </ClInclude>
     <ClInclude Include="Sensors\KinectSensor.h">
-      <Filter>Source Files\Sensors</Filter>
+      <Filter>Sensors</Filter>
     </ClInclude>
     <ClInclude Include="Sensors\Sensors.h">
-      <Filter>Source Files\Sensors</Filter>
+      <Filter>Sensors</Filter>
     </ClInclude>
     <ClInclude Include="ImageProcessing\HandDetection.h">
-      <Filter>Source Files\ImageProcessing</Filter>
+      <Filter>ImageProcessing</Filter>
     </ClInclude>
     <ClInclude Include="DataTypes\Pixels.h">
-      <Filter>Source Files\DataTypes</Filter>
+      <Filter>DataTypes</Filter>
     </ClInclude>
     <ClInclude Include="DataTypes\carray.h">
-      <Filter>Source Files\DataTypes</Filter>
+      <Filter>DataTypes</Filter>
     </ClInclude>
     <ClInclude Include="DataTypes\Points.h">
-      <Filter>Source Files\DataTypes</Filter>
+      <Filter>DataTypes</Filter>
     </ClInclude>
     <ClInclude Include="DataTypes\carray2d.h">
-      <Filter>Source Files\DataTypes</Filter>
+      <Filter>DataTypes</Filter>
     </ClInclude>
     <ClInclude Include="DataTypes\Constants.h">
-      <Filter>Source Files\DataTypes</Filter>
+      <Filter>DataTypes</Filter>
     </ClInclude>
     <ClInclude Include="DataTypes\KinectData.h">
-      <Filter>Source Files\DataTypes</Filter>
+      <Filter>DataTypes</Filter>
     </ClInclude>
     <ClInclude Include="DataTypes\KinectDataParams.h">
-      <Filter>Source Files\DataTypes</Filter>
+      <Filter>DataTypes</Filter>
     </ClInclude>
     <ClInclude Include="DataTypes\DataTypes.h">
-      <Filter>Source Files\DataTypes</Filter>
+      <Filter>DataTypes</Filter>
     </ClInclude>
     <ClInclude Include="DataTypes\Other.h">
-      <Filter>Source Files\DataTypes</Filter>
+      <Filter>DataTypes</Filter>
     </ClInclude>
     <ClInclude Include="Util\Util.h">
-      <Filter>Source Files\Util</Filter>
+      <Filter>Util</Filter>
     </ClInclude>
     <ClInclude Include="DataTypes\Hand.h">
-      <Filter>Source Files\DataTypes</Filter>
+      <Filter>DataTypes</Filter>
     </ClInclude>
     <ClInclude Include="DataTypes\Images.h">
-      <Filter>Source Files\DataTypes</Filter>
+      <Filter>DataTypes</Filter>
     </ClInclude>
     <ClInclude Include="DataTypes\Table.h">
-      <Filter>Source Files\DataTypes</Filter>
+      <Filter>DataTypes</Filter>
     </ClInclude>
     <ClInclude Include="DataTypes\HandPimpl.h">
-      <Filter>Source Files\DataTypes</Filter>
+      <Filter>DataTypes</Filter>
     </ClInclude>
     <ClInclude Include="ImageProcessing\HandLabeler.h">
-      <Filter>Source Files\ImageProcessing</Filter>
+      <Filter>ImageProcessing</Filter>
     </ClInclude>
     <ClInclude Include="Util\Helpers.h">
-      <Filter>Source Files\Util</Filter>
+      <Filter>Util</Filter>
     </ClInclude>
     <ClInclude Include="Network\FrameType.h">
-      <Filter>Source Files\Network</Filter>
+      <Filter>Network</Filter>
     </ClInclude>
     <ClInclude Include="Network\ImageSerializer.h">
-      <Filter>Source Files\Network</Filter>
+      <Filter>Network</Filter>
     </ClInclude>
     <ClInclude Include="Network\Info.h">
-      <Filter>Source Files\Network</Filter>
+      <Filter>Network</Filter>
     </ClInclude>
     <ClInclude Include="Sensors\KinectSensor_Microsoft.h">
-      <Filter>Source Files\Sensors</Filter>
+      <Filter>Sensors</Filter>
     </ClInclude>
     <ClInclude Include="Sensors\KinectSensor_OpenNi.h">
-      <Filter>Source Files\Sensors</Filter>
+      <Filter>Sensors</Filter>
     </ClInclude>
     <ClInclude Include="KinectTable\DataForwarder.h">
-      <Filter>Source Files\KinectTable</Filter>
+      <Filter>KinectTable</Filter>
     </ClInclude>
     <ClInclude Include="KinectTable\RemoteClient.h">
-      <Filter>Source Files\KinectTable</Filter>
+      <Filter>KinectTable</Filter>
     </ClInclude>
     <ClInclude Include="ImageProcessing\Helpers.h">
-      <Filter>Source Files\ImageProcessing</Filter>
+      <Filter>ImageProcessing</Filter>
     </ClInclude>
     <ClInclude Include="ImageProcessing\Helpers.hpp">
-      <Filter>Source Files\ImageProcessing</Filter>
+      <Filter>ImageProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="ImageProcessing\ImageProcessing.h" />
-    <ClInclude Include="Serialization\Serializer.h" />
-    <ClInclude Include="Serialization\Deserializer.h" />
-    <ClInclude Include="Serialization\ISerializable.h" />
-    <ClInclude Include="Serialization\IWriter.h" />
-    <ClInclude Include="Serialization\Serialization.h" />
-    <ClInclude Include="Network\KinectDataSerializer.h" />
-    <ClInclude Include="Serializers\carray2dSerializer.h" />
-    <ClInclude Include="Serializers\carraySerializer.h" />
-    <ClInclude Include="Serializers\Serializers.h" />
-    <ClInclude Include="DataTypes\carray.hpp" />
-    <ClInclude Include="DataTypes\carray2d.hpp" />
-    <ClInclude Include="Serialization\Serializer.hpp" />
-    <ClInclude Include="Serialization\Deserializer.hpp" />
-    <ClInclude Include="Randomization\IRandomizable.h" />
-    <ClInclude Include="Randomization\Randomizer.h" />
-    <ClInclude Include="Randomization\Randomization.h" />
-    <ClInclude Include="Util\Snapshot.h" />
-    <ClInclude Include="Util\DemoImageCreator.h" />
-    <ClInclude Include="Sensors\TestImageHolder.h" />
+    <ClInclude Include="DataTypes\carray.hpp">
+      <Filter>DataTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="DataTypes\carray2d.hpp">
+      <Filter>DataTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="Serializers\Serializers.h">
+      <Filter>Serializers</Filter>
+    </ClInclude>
+    <ClInclude Include="Serializers\carray2dSerializer.h">
+      <Filter>Serializers</Filter>
+    </ClInclude>
+    <ClInclude Include="Serializers\carraySerializer.h">
+      <Filter>Serializers</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\DemoImageCreator.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Serialization\Deserializer.h">
+      <Filter>Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="Serialization\Deserializer.hpp">
+      <Filter>Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageProcessing\ImageProcessing.h">
+      <Filter>ImageProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="Randomization\IRandomizable.h">
+      <Filter>Randomization</Filter>
+    </ClInclude>
+    <ClInclude Include="Randomization\Randomization.h">
+      <Filter>Randomization</Filter>
+    </ClInclude>
+    <ClInclude Include="Randomization\Randomizer.h">
+      <Filter>Randomization</Filter>
+    </ClInclude>
+    <ClInclude Include="Serialization\ISerializable.h">
+      <Filter>Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="Serialization\IWriter.h">
+      <Filter>Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\KinectDataSerializer.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Serialization\Serialization.h">
+      <Filter>Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="Serialization\Serializer.h">
+      <Filter>Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="Serialization\Serializer.hpp">
+      <Filter>Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\Snapshot.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Sensors\TestImageHolder.h">
+      <Filter>Sensors</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AssemblyInfo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Global\KinectTable_c.cpp">
-      <Filter>Source Files\Global</Filter>
+      <Filter>Global</Filter>
     </ClCompile>
     <ClCompile Include="Global\Testing_c.cpp">
-      <Filter>Source Files\Global</Filter>
+      <Filter>Global</Filter>
     </ClCompile>
     <ClCompile Include="KinectTable\KinectTable.cpp">
-      <Filter>Source Files\KinectTable</Filter>
+      <Filter>KinectTable</Filter>
     </ClCompile>
     <ClCompile Include="Network\Client.cpp">
-      <Filter>Source Files\Network</Filter>
+      <Filter>Network</Filter>
     </ClCompile>
     <ClCompile Include="Network\ClientListener.cpp">
-      <Filter>Source Files\Network</Filter>
+      <Filter>Network</Filter>
     </ClCompile>
     <ClCompile Include="Network\RemoteClient.cpp">
-      <Filter>Source Files\Network</Filter>
+      <Filter>Network</Filter>
     </ClCompile>
     <ClCompile Include="Network\Server.cpp">
-      <Filter>Source Files\Network</Filter>
+      <Filter>Network</Filter>
     </ClCompile>
     <ClCompile Include="Sockets\Packetizer.cpp">
-      <Filter>Source Files\Sockets</Filter>
+      <Filter>Sockets</Filter>
     </ClCompile>
     <ClCompile Include="Sockets\Serializer.cpp">
-      <Filter>Source Files\Sockets</Filter>
+      <Filter>Sockets</Filter>
     </ClCompile>
     <ClCompile Include="Sockets\TcpListener.cpp">
-      <Filter>Source Files\Sockets</Filter>
+      <Filter>Sockets</Filter>
     </ClCompile>
     <ClCompile Include="Sockets\TcpSocket.cpp">
-      <Filter>Source Files\Sockets</Filter>
+      <Filter>Sockets</Filter>
     </ClCompile>
     <ClCompile Include="Template\TemplateClass.cpp">
-      <Filter>Source Files\Template</Filter>
+      <Filter>Template</Filter>
     </ClCompile>
     <ClCompile Include="Template\TemplateStatic.cpp">
-      <Filter>Source Files\Template</Filter>
+      <Filter>Template</Filter>
     </ClCompile>
     <ClCompile Include="Testing\ClientSpeedTest.cpp">
-      <Filter>Source Files\Testing</Filter>
+      <Filter>Testing</Filter>
     </ClCompile>
     <ClCompile Include="Testing\ClientTest.cpp">
-      <Filter>Source Files\Testing</Filter>
+      <Filter>Testing</Filter>
     </ClCompile>
     <ClCompile Include="Testing\FramerTest.cpp">
-      <Filter>Source Files\Testing</Filter>
+      <Filter>Testing</Filter>
     </ClCompile>
     <ClCompile Include="Testing\SocketSpeedTest.cpp">
-      <Filter>Source Files\Testing</Filter>
+      <Filter>Testing</Filter>
     </ClCompile>
     <ClCompile Include="Testing\SocketTest.cpp">
-      <Filter>Source Files\Testing</Filter>
+      <Filter>Testing</Filter>
     </ClCompile>
     <ClCompile Include="Threading\Mutex.cpp">
-      <Filter>Source Files\Threading</Filter>
+      <Filter>Threading</Filter>
     </ClCompile>
     <ClCompile Include="Threading\Thread.cpp">
-      <Filter>Source Files\Threading</Filter>
+      <Filter>Threading</Filter>
     </ClCompile>
     <ClCompile Include="Network\Framer.cpp">
-      <Filter>Source Files\Network</Filter>
+      <Filter>Network</Filter>
     </ClCompile>
     <ClCompile Include="Testing\HandDetectionTest.cpp">
-      <Filter>Source Files\Testing</Filter>
+      <Filter>Testing</Filter>
     </ClCompile>
     <ClCompile Include="Testing\TableDetectionTest.cpp">
-      <Filter>Source Files\Testing</Filter>
+      <Filter>Testing</Filter>
     </ClCompile>
     <ClCompile Include="Util\DataExporter.cpp">
-      <Filter>Source Files\Util</Filter>
+      <Filter>Util</Filter>
     </ClCompile>
     <ClCompile Include="ImageProcessing\TableDetection.cpp">
-      <Filter>Source Files\ImageProcessing</Filter>
+      <Filter>ImageProcessing</Filter>
     </ClCompile>
     <ClCompile Include="KinectTable\LocalClient.cpp">
-      <Filter>Source Files\KinectTable</Filter>
+      <Filter>KinectTable</Filter>
     </ClCompile>
     <ClCompile Include="Testing\Tests.cpp">
-      <Filter>Source Files\Testing</Filter>
+      <Filter>Testing</Filter>
     </ClCompile>
     <ClCompile Include="Sensors\DataProcessor.cpp">
-      <Filter>Source Files\Sensors</Filter>
+      <Filter>Sensors</Filter>
     </ClCompile>
     <ClCompile Include="ImageProcessing\HandDetection.cpp">
-      <Filter>Source Files\ImageProcessing</Filter>
+      <Filter>ImageProcessing</Filter>
     </ClCompile>
     <ClCompile Include="DataTypes\Pixels.cpp">
-      <Filter>Source Files\DataTypes</Filter>
+      <Filter>DataTypes</Filter>
     </ClCompile>
     <ClCompile Include="Util\Drawing.cpp">
-      <Filter>Source Files\Util</Filter>
+      <Filter>Util</Filter>
     </ClCompile>
     <ClCompile Include="DataTypes\Hand.cpp">
-      <Filter>Source Files\DataTypes</Filter>
+      <Filter>DataTypes</Filter>
     </ClCompile>
     <ClCompile Include="ImageProcessing\HandLabeler.cpp">
-      <Filter>Source Files\ImageProcessing</Filter>
+      <Filter>ImageProcessing</Filter>
     </ClCompile>
     <ClCompile Include="Util\Helpers.cpp">
-      <Filter>Source Files\Util</Filter>
+      <Filter>Util</Filter>
     </ClCompile>
     <ClCompile Include="Sensors\KinectSensor_OpenNi.cpp">
-      <Filter>Source Files\Sensors</Filter>
+      <Filter>Sensors</Filter>
     </ClCompile>
     <ClCompile Include="Sensors\KinectSensor_Microsoft.cpp">
-      <Filter>Source Files\Sensors</Filter>
-    </ClCompile>
-    <ClCompile Include="KinectTable\DataForwarder.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Sensors</Filter>
     </ClCompile>
     <ClCompile Include="KinectTable\RemoteClient.cpp">
-      <Filter>Source Files\KinectTable</Filter>
-    </ClCompile>
-    <ClCompile Include="DataTypes\Table.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>KinectTable</Filter>
     </ClCompile>
     <ClCompile Include="ImageProcessing\Helpers.cpp">
-      <Filter>Source Files\ImageProcessing</Filter>
-    </ClCompile>
-    <ClCompile Include="DataTypes\KinectData.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>ImageProcessing</Filter>
     </ClCompile>
     <ClCompile Include="Serialization\Deserializer.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Serialization</Filter>
     </ClCompile>
-    <ClCompile Include="Serialization\Serializer.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="KinectTable\DataForwarder.cpp">
+      <Filter>KinectTable</Filter>
+    </ClCompile>
+    <ClCompile Include="DataTypes\KinectData.cpp">
+      <Filter>DataTypes</Filter>
     </ClCompile>
     <ClCompile Include="DataTypes\KinectDataParams.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>DataTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="Serialization\Serializer.cpp">
+      <Filter>Serialization</Filter>
     </ClCompile>
     <ClCompile Include="Util\Snapshot.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="DataTypes\Table.cpp">
+      <Filter>DataTypes</Filter>
     </ClCompile>
     <ClCompile Include="Sensors\TestImageHolder.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Sensors</Filter>
     </ClCompile>
+    <ClCompile Include="AssemblyInfo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
