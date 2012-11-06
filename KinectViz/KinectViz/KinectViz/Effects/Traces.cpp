@@ -1,3 +1,4 @@
+#include <iostream>
 #include <DataTypes\DataTypes.h>
 #include "Traces.h"
 #include "Util.h"
@@ -7,19 +8,26 @@ namespace KinectViz {
 
 Traces::Traces() :
 	maxTraceAge(3000),
-	color(220, 150, 0)
+	color(220, 150, 0),
+	x(1.0f, 1.0f, 0.1f),
+	y(1.0f, 1.0f, 0.1f)
 {
 }
 
 void Traces::applyEffect(ColorImage& image, KinectData& kinectData, const GrayImage& handsMask, int timeElapsed) {
 	// Add new trace points
-	addTraces(kinectData);
+	addTraces(kinectData, timeElapsed);
 	updateAndPruneTraces(timeElapsed);
 	drawTraces(image);
 }
 
-void Traces::addTraces(KinectData& kinectData) {
+void Traces::addTraces(KinectData& kinectData, int timeElapsed) {
 	for (auto hand = kinectData.hands.cbegin(); hand != kinectData.hands.cend(); hand++) {
+		// If hand isn't detected properly, don't add a trace.
+		// This is especially important since we can't index -1 on tracesPerHand.
+		if (hand->id == -1)
+			continue;
+
 		// Skip this hand if it's not in effect layer
 		if (!handWithinLayer(kinectData, *hand))
 			continue;
@@ -37,8 +45,10 @@ void Traces::addTraces(KinectData& kinectData) {
 
 		// Filter the new point and add a trace
 		const Point2Di tip = hand->fingerTips[closestFinger];
-		// TODO: filter
-		const Point3i tipWithTime(tip.x, tip.y, 0);
+		const float filteredX = x.filter(tip.x, (float)timeElapsed);
+		const float filteredY = y.filter(tip.y, (float)timeElapsed);
+		std::cout << "y=" << tip.y << "   filtered=" << filteredY << std::endl;
+		const Point3i tipWithTime(filteredX, filteredY, 0);
 		tracesPerHand[hand->id].push_back(tipWithTime);
 	}
 }

@@ -1,6 +1,7 @@
 #pragma once
 #include <DataTypes/DataTypes.h>
 #include "../Effect.h"
+#include "../OneEuroFilter.h"
 
 
 namespace KinectViz {
@@ -17,11 +18,13 @@ public:
 
 
 private:
-	void addTraces(KinectData& kinectData);
+	void addTraces(KinectData& kinectData, int timeElapsed);
 	void updateAndPruneTraces(int dt);
 	void drawTraces(ColorImage& image);
 
 	std::vector< std::vector<Point3i> > tracesPerHand;
+	OneEuroFilter x;
+	OneEuroFilter y;
 };
 
 }

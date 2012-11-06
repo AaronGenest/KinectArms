@@ -117,6 +117,7 @@
     <ClInclude Include="KinectViz\Effects\Traces.h" />
     <ClInclude Include="KinectViz\Effects\Transparency.h" />
     <ClInclude Include="KinectViz\Effects\Util.h" />
+    <ClInclude Include="KinectViz\OneEuroFilter.h" />
     <ClInclude Include="KinectViz\VizPipeline.h" />
     <ClInclude Include="View.h" />
   </ItemGroup>
@@ -137,6 +138,7 @@
     <ClCompile Include="KinectViz\Effects\Traces.cpp" />
     <ClCompile Include="KinectViz\Effects\Transparency.cpp" />
     <ClCompile Include="KinectViz\Effects\Util.cpp" />
+    <ClCompile Include="KinectViz\OneEuroFilter.cpp" />
     <ClCompile Include="KinectViz\VizPipeline.cpp" />
     <ClCompile Include="View.cpp" />
   </ItemGroup>

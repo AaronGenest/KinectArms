@@ -47,6 +47,9 @@
     <ClCompile Include="KinectViz\Effects\Transparency.cpp">
       <Filter>KinectViz\Effects</Filter>
     </ClCompile>
+    <ClCompile Include="KinectViz\OneEuroFilter.cpp">
+      <Filter>KinectViz</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Effects.h" />
@@ -93,6 +96,9 @@
     </ClInclude>
     <ClInclude Include="KinectViz\Effects\Tattoo.h">
       <Filter>KinectViz\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="KinectViz\OneEuroFilter.h">
+      <Filter>KinectViz</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
