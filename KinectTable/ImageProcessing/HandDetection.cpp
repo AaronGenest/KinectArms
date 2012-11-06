@@ -480,7 +480,7 @@ void FindArmBase(const std::vector<Point2Di>& boundary, const BinaryImage& table
 			if(startingBase)
 			{
 				// We are starting a base
-				baseStartIndex = j+1;
+				baseStartIndex = (j + startIndex + 1) % boundary.size();
 				count = 0;
 			}
 			else if(endingBase)
