@@ -41,7 +41,7 @@ namespace KinectTableExampleCSharp
             {
 
                 // Draw arm shadows
-                DrawArmShadows(bitmap, data.TableInfo, data.Hands);
+                //DrawArmShadows(bitmap, data.TableInfo, data.Hands);
 
                 // Draw boundaries around arms
                 Color[] armColors = { Color.Black, Color.Red, Color.Green, Color.Blue };
