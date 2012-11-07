@@ -1,6 +1,7 @@
 #pragma once
 #include <DataTypes/DataTypes.h>
 #include "../Effect.h"
+#include "../OneEuroFilter.h"
 
 
 namespace KinectViz {
@@ -17,6 +18,11 @@ public:
 	float alphaScale;
 	float minRadius;
 	ColorPixel color;
+
+
+private:
+	std::vector<OneEuroFilter> xFilterPerHand;
+	std::vector<OneEuroFilter> yFilterPerHand;
 };
 
 }
