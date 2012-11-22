@@ -649,10 +649,11 @@ void FindPalmCenter(const BinaryImage& armBlob, const Point2Di& armBase, const P
 		const Point2Di& point = armBlobIndices.data[i];
 		float pointMagnitude = (point - armBase).Magnitude();
 
-		if(pointMagnitude > armCenterMagnitude && distImage.data[point.y][point.x] > maxValue)
+		const float value = distImage.data[point.y][point.x] * pointMagnitude;
+		if(pointMagnitude > armCenterMagnitude && value > maxValue)
 		{
 			maxValuePoint = point;
-			maxValue = distImage.data[point.y][point.x];
+			maxValue = value;
 		}
 
 	}
