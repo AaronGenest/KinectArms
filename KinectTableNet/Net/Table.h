@@ -97,7 +97,7 @@ namespace KinectTableNet
 			return;
 		}
 
-		~Table()
+		!Table()
 		{
 			if(tableU != NULL)
 			{
